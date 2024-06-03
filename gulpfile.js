@@ -56,7 +56,7 @@ const jsCompile = [
     partials : [
       {
         declarations : [
-          
+          'global-variables.js'
         ],
         plugins : [
           
