@@ -52,7 +52,7 @@ function scss(cb) {
 // Define JS files to be compiled
 const jsCompile = [
   {
-    compileTo : 'index.js',
+    compileTo : 'scripts.js',
     partials : [
       {
         declarations : [
@@ -65,7 +65,7 @@ const jsCompile = [
           
         ],
         screens : [
-
+          'intro-screen.js'
         ]
       }
     ]
