@@ -1,5 +1,13 @@
-
+# Ignore Node modules
 node_modules/
+
+# Ignore dist and test folders
+dist/
+test/
 
 # macOS Files
 .DS_Store
+/*/.DS_Store
+
+# Other
+.vscode/
