@@ -1,0 +1,13 @@
+
+// True colours
+$black: #000000;
+$white: #FFFFFF;
+
+// App colours
+$app_black: #333333;
+
+// App colour tints
+$app_black_90: mix(white, $app_black, 10%);
+
+// System colours
+$error_red: #FF0000;

@@ -1,0 +1,125 @@
+
+body {
+	//font-family:
+	font-weight: 400;
+	background-color: $app_black;
+	color: $white;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+	//font-family: 
+	font-weight: 400;
+	//-webkit-font-smoothing: antialiased;
+}
+h1 {
+	//@include font-size($h1_size);
+	line-height: 1;
+	margin-bottom: 20px;
+}
+h2 {
+	//@include font-size($h2_size);
+	line-height: 1.1;
+	margin-bottom: 30px;
+}
+h3 {
+	//@include font-size($h3_size);
+	line-height: 1.1;
+	margin-bottom: 20px;
+}
+h4 {
+	//@include font-size($h4_size);
+	line-height: 1.2;
+	margin-bottom: 10px;
+}
+h5 {
+	//@include font-size($h5_size);
+}
+h6 {
+	//@include font-size($h6_size);
+}
+p {
+  //@include font-size($p_text_size);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+a {
+  cursor: pointer;
+  color: $white;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+ul, ol {
+	//@include font-size($p_text_size);
+  line-height: 1.5;
+	margin-bottom: 20px;
+}
+ul {
+	padding-inline-start: 1em; // Bullet space at scalable font-size
+}
+ol {
+	padding-inline-start: 1.25em; // Single digit space at scalable font-size
+}
+
+
+
+
+
+//----------- Media queries from mobile up (xs, xs_landscape, s, m, ml, l, xl, xxl) -----------//
+
+
+@include mquery(s) {
+
+
+} // end media-query small
+
+
+
+
+
+
+@include mquery(m) {
+
+} // end media-query medium
+
+
+
+
+
+
+
+@include mquery(ml) {
+
+
+} // end media-query medium-large
+
+
+
+
+
+
+@include mquery(l) {
+
+
+} // end media-query large
+
+
+
+
+
+
+@include mquery(xl) {
+
+} // end media-query extra-large
+
+
+
+
+
+
+@include mquery(xxl) {
+
+} // end media-query extra-extra-large
