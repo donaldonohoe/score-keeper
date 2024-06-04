@@ -1,4 +1,6 @@
-const TEST_GAME_JSON = {
+let gameJSON;
+
+let TEST_GAME_JSON = {
   'game_created_timestamp': 1717452024450,
   'game_created_readable': 'Mon Jun 03 2024 23:00:24 GMT+0100 (Irish Standard Time)',
   'game_session': {
@@ -104,18 +106,11 @@ const TEST_GAME_JSON = {
       }
     ]
   },
+  'game_historical_players': ['John', 'Barbara'],
   'game_settings': {
     'players_listed_by': 'score',
     'player_name_suggestions': true,
     'allow_decimal_scores': false,
     'allow_negative_scores': false
-  },
+  }
 }
-
-
-console.log(TEST_GAME_JSON);
-
-// var newDate = new Date();
-// var dateNow = Date.now();
-// console.log(newDate);
-// console.log(dateNow);

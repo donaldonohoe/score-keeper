@@ -62,7 +62,7 @@ const jsCompile = [
           
         ],
         functions : [
-          
+          'create-new-game.js'
         ],
         screens : [
           'intro-screen.js'
