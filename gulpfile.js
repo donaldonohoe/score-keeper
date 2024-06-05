@@ -56,7 +56,8 @@ const jsCompile = [
     partials : [
       {
         declarations : [
-          'global-variables.js'
+          'global-variables.js',
+          'elements.js'
         ],
         plugins : [
           
@@ -64,8 +65,9 @@ const jsCompile = [
         functions : [
           'create-new-game.js'
         ],
-        screens : [
-          'intro-screen.js'
+        layers : [
+          'intro.js',
+          'main.js'
         ]
       }
     ]

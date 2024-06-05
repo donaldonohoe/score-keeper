@@ -8,6 +8,15 @@ $app_black: #333333;
 
 // App colour tints
 $app_black_90: mix(white, $app_black, 10%);
+$app_black_80: mix(white, $app_black, 20%);
+$app_black_70: mix(white, $app_black, 30%);
+$app_black_60: mix(white, $app_black, 40%);
+$app_black_50: mix(white, $app_black, 50%);
+$app_black_40: mix(white, $app_black, 60%);
+$app_black_30: mix(white, $app_black, 70%);
+$app_black_20: mix(white, $app_black, 80%);
+$app_black_10: mix(white, $app_black, 90%);
+
 
 // System colours
 $error_red: #FF0000;

@@ -2,32 +2,59 @@
 <html lang="en">
 <head>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Web app that keeps score in multiplayer games" />
-    <meta name="keywords" content="Game, score, score keeper, score tracker, player, winner, game stats, game history" />
-    <meta name="author" content="Donal Donohoe" />
-    <title>Score Keeper</title>
-    <style></style>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Web app that keeps score in multiplayer games" />
+  <meta name="keywords" content="Game, score, score keeper, score tracker, player, winner, game stats, game history" />
+  <meta name="author" content="Donal Donohoe" />
+  <title>Score Keeper</title>
+  <style></style>
 
-    <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
-    <!-- Scripts -->
-    <script type="text/javascript" src="js/scripts.js" defer></script>
-
+  <!-- Scripts -->
+  <script type="text/javascript" src="js/scripts.js" defer></script>
 
 </head>
+
 <body>
 
-    <main>
+  <main>
 
-        <section>
+    <div id="game-frame">
 
-        </section>
+      <!-- Bottom nav -->
+      <nav id="game-nav">
+        <button id="settings-button" data-target-el="settings-drawer">Settings</button>
+        <button id="add-player-button" data-target-el="add-player-drawer">Add player</button>
+        <button id="game-info-button" data-target-el="game-info-drawer">Game info</button>
+      </nav>
 
-    </main>
+      <!-- Add Player drawer -->
+      <aside id="add-player-drawer" class="drawer from-bottom">
+        <h2>Add Player</h2>
+        <div class="custom-input-block">
+          <div class="custom-input"></div>
+          <button>+</button>
+        </div>
+        <div id="player-chips"></div>
+      </aside>
+
+      <!-- Settings drawer -->
+      <aside id="settings-drawer" class="drawer from-bottom">
+        <h2>Settings</h2>
+      </aside>
+
+      <!-- Game Info drawer -->
+      <aside id="game-info-drawer" class="drawer from-bottom">
+        <h2>Game Info</h2>
+      </aside>
+
+    </div>
+
+  </main>
     
 </body>
 </html>

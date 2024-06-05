@@ -1,0 +1,18 @@
+
+.drawer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  background-color: $app_black_90;
+  transition: transform 0.2s $ease;
+  &.from-bottom {
+    border-top-left-radius: $drawer_border_radius;
+    border-top-right-radius: $drawer_border_radius;
+    transform: translateY(100%);
+    &.active {
+      transform: translateY(0);
+    }
+  }
+}
