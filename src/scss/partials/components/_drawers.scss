@@ -7,6 +7,16 @@
   height: 90%;
   background-color: $app_black_90;
   transition: transform 0.2s $ease;
+  display: grid;
+  grid-template-rows: min-content auto;
+  > h2 {
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px;
+  }
+  .inner {
+    padding: 30px;
+  }
   &.from-bottom {
     border-top-left-radius: $drawer_border_radius;
     border-top-right-radius: $drawer_border_radius;
@@ -15,4 +25,40 @@
       transform: translateY(0);
     }
   }
-}
+} // .drawer
+
+#add-player-drawer {
+  .inner {
+    padding-top: 60px;
+    .input-block {
+      display: grid;
+      grid-template-columns: auto min-content;
+      grid-gap: 15px;
+      align-items: center;
+      border-bottom: 2px solid $white;
+      input {
+        font-family: $font_family_primary;
+        font-size: 36px;
+        //text-transform: uppercase;
+        color: $white;
+        width: 100%;
+        padding: 10px;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        &:active {
+          outline: 0;
+        }
+      }
+      button {
+        font-size: 36px;
+        line-height: 40px;
+        color: $app_black;
+        background-color: $white;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+      }
+    }
+  }
+} // #add-player-drawer

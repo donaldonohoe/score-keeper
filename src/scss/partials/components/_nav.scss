@@ -9,6 +9,7 @@
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   button {
     font-size: 18px;
+    text-transform: uppercase;
     color: $white;
     padding: 10px;
     &:hover {
