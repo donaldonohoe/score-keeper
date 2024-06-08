@@ -1,5 +1,7 @@
 let gameJSON;
 
+const drawerSlideTime = 200;
+
 let TEST_GAME_JSON = {
   'game_created_timestamp': 1717452024450,
   'game_created_readable': 'Mon Jun 03 2024 23:00:24 GMT+0100 (Irish Standard Time)',
