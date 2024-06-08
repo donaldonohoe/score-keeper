@@ -7,7 +7,7 @@ const createPlayerBar = (value) => {
       <span class="name">${value}</span>
       <span class="play-count">(0)</span>
       <div class="score-meter">
-        <div class="bar">
+        <div class="bar" data-current-score="0">
           <span class="current-score">0</span>
         </div>
       </div>
@@ -29,6 +29,6 @@ const createPlayer = (value) => {
 
 const addPlayerInputCheck = (value) => {
   if(value.length > 1) {
-    createPlayer(value);
+    createPlayer(value.toUpperCase()); // Convert to uppercase at point of entry
   }
 }
