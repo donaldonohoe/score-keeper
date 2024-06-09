@@ -2,6 +2,7 @@
 // Check local storage for Game
 if(localStorage.getItem("game")) {
   gameJSON = JSON.parse(localStorage.getItem("game"));
+  loadGameFromStorage(gameJSON);
   console.log(gameJSON);
 }
 // Else set up new game

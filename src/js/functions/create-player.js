@@ -1,14 +1,14 @@
 
-const createPlayerBar = (value) => {
+const createPlayerBar = (player) => {
   let el_playerBar = document.createElement('div');
   el_playerBar.classList.add('player-bar');
   el_playerBar.innerHTML = `
     <div class="inner">
-      <span class="name">${value}</span>
-      <span class="play-count">(0)</span>
+      <span class="name">${player.name}</span>
+      <span class="play-count">(${player.play_count})</span>
       <div class="score-meter">
-        <div class="bar" data-current-score="0">
-          <span class="current-score">0</span>
+        <div class="bar" data-current-score="${player.current_score}">
+          <span class="current-score">${player.current_score}</span>
         </div>
       </div>
     </div>
@@ -17,12 +17,11 @@ const createPlayerBar = (value) => {
 }
 
 
-const addPlayerToGameJSON = (value) => {
+const addPlayerToGameJSON = (playerName) => {
   // Add to players array 
-  let numberOfExistingPlayers = gameJSON.game_session.players.length;
   let newPlayer = {
-    'name': value,
-    'created_index': numberOfExistingPlayers + 1,
+    'name': playerName,
+    'created_index': gameJSON.game_session.players.length + 1,
     'current_score': 0,
     'current_ranking': 0,
     'play_count': 0,
@@ -33,24 +32,24 @@ const addPlayerToGameJSON = (value) => {
   // Update game history
   let historyItem = {
     'timestamp': new Date(),
-    'action': `${value} was added to the game.`
+    'action': `${playerName} was added to the game.`
   }
   gameJSON.game_session.history.push(historyItem);
   // Update game historical players list
   let historicalPlayers = gameJSON.game_historical_players;
-  if(!historicalPlayers.includes(value)) {
-    historicalPlayers.push(value);
+  if(!historicalPlayers.includes(playerName)) {
+    historicalPlayers.push(playerName);
   }
   // Save game
   saveGameJSON();
 }
 
 
-const createPlayer = (value) => {
-  createPlayerBar(value);
+const createPlayer = (playerName) => {
+  addPlayerToGameJSON(playerName);
+  createPlayerBar(gameJSON.game_session.players.find(player => player.name == playerName)); // pass player object
   closeDrawer();
   el_addPlayerInput.value = ''; // Reset drawer input
-  addPlayerToGameJSON(value);
 }
 
 

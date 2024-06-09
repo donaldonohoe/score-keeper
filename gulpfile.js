@@ -63,6 +63,7 @@ const jsCompile = [
           
         ],
         functions : [
+          'load-game.js',
           'create-new-game.js',
           'create-player.js',
           'open-close-drawer.js'
