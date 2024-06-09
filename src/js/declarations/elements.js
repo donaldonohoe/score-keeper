@@ -19,6 +19,7 @@ const els_drawers = document.querySelectorAll('.drawer');
 const el_addPlayerDrawer = document.getElementById('add-player-drawer');
 const el_addPlayerInput = document.getElementById('add-player-input');
 const el_addPlayerSubmit = document.getElementById('add-player-submit');
+const el_addPlayerChips = document.getElementById('add-player-chips');
 
 const el_settingsDrawer = document.getElementById('settings-drawer');
 const el_gameInfoDrawer = document.getElementById('game-info-drawer');

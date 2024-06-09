@@ -1,22 +1,4 @@
 
-const createPlayerBar = (player) => {
-  let el_playerBar = document.createElement('div');
-  el_playerBar.classList.add('player-bar');
-  el_playerBar.innerHTML = `
-    <div class="inner">
-      <span class="name">${player.name}</span>
-      <span class="play-count">(${player.play_count})</span>
-      <div class="score-meter">
-        <div class="bar" data-current-score="${player.current_score}">
-          <span class="current-score">${player.current_score}</span>
-        </div>
-      </div>
-    </div>
-  `;
-  el_leaderboard.append(el_playerBar);
-}
-
-
 const addPlayerToGameJSON = (playerName) => {
   // Add to players array 
   let newPlayer = {
@@ -45,9 +27,41 @@ const addPlayerToGameJSON = (playerName) => {
 }
 
 
+const createPlayerBar = (player) => {
+  let el_playerBar = document.createElement('div');
+  el_playerBar.classList.add('player-bar');
+  el_playerBar.innerHTML = `
+    <div class="inner">
+      <span class="name">${player.name}</span>
+      <span class="play-count">(${player.play_count})</span>
+      <div class="score-meter">
+        <div class="bar" data-current-score="${player.current_score}">
+          <span class="current-score">${player.current_score}</span>
+        </div>
+      </div>
+    </div>
+  `;
+  el_leaderboard.append(el_playerBar);
+}
+
+/*
+const createPlayerChip = (player) => {
+  let el_playerChip = document.createElement('div');
+  el_playerChip.classList.add('player-chip');
+  el_playerChip.innerHTML = `
+    <span class="name">${player.name}</span>
+    <button class="remove"><button>    
+  `;
+  el_addPlayerChips.append(el_playerChip);
+}
+*/
+
+
 const createPlayer = (playerName) => {
   addPlayerToGameJSON(playerName);
-  createPlayerBar(gameJSON.game_session.players.find(player => player.name == playerName)); // pass player object
+  let player = gameJSON.game_session.players.find(player => player.name == playerName); // Player object
+  createPlayerBar(player);
+  //createPlayerChip(player);
   closeDrawer();
   el_addPlayerInput.value = ''; // Reset drawer input
 }
