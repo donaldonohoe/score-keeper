@@ -21,5 +21,13 @@ const el_addPlayerInput = document.getElementById('add-player-input');
 const el_addPlayerSubmit = document.getElementById('add-player-submit');
 const el_addPlayerChips = document.getElementById('add-player-chips');
 
+// Player drawer
+const el_playerDrawer = document.getElementById('player-drawer');
+const el_playerScoreInput = document.getElementById('player-score-input');
+const el_playerScoreSubmit = document.getElementById('player-score-submit');
+
+// Settings drawer
 const el_settingsDrawer = document.getElementById('settings-drawer');
+
+// Game info drawer
 const el_gameInfoDrawer = document.getElementById('game-info-drawer');

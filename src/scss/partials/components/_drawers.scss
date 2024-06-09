@@ -9,27 +9,13 @@
   transition: transform 0.2s $ease;
   display: grid;
   grid-template-rows: min-content auto;
-  > h2 {
+  .drawer-header {
     text-transform: uppercase;
     text-align: center;
     padding: 20px;
   }
   .inner {
     padding: 30px;
-  }
-  &.from-bottom {
-    border-top-left-radius: $drawer_border_radius;
-    border-top-right-radius: $drawer_border_radius;
-    transform: translateY(100%);
-    &.active {
-      transform: translateY(0);
-    }
-  }
-} // .drawer
-
-#add-player-drawer {
-  .inner {
-    padding-top: 60px;
     .input-block {
       display: grid;
       grid-template-columns: auto min-content;
@@ -60,5 +46,19 @@
         border-radius: 10px;
       }
     }
+  }
+  &.from-bottom {
+    border-top-left-radius: $drawer_border_radius;
+    border-top-right-radius: $drawer_border_radius;
+    transform: translateY(100%);
+    &.active {
+      transform: translateY(0);
+    }
+  }
+} // .drawer
+
+#add-player-drawer {
+  .inner {
+    padding-top: 60px;
   }
 } // #add-player-drawer

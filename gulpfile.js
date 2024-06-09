@@ -63,15 +63,17 @@ const jsCompile = [
           
         ],
         functions : [
+          'open-close-drawer.js',
           'load-game.js',
           'create-new-game.js',
           'create-player.js',
-          'open-close-drawer.js'
+          'apply-score.js'
         ],
         layers : [
           'intro.js',
           'main.js',
-          'add-player-drawer.js'
+          'add-player-drawer.js',
+          'player-drawer.js'
         ]
       }
     ]

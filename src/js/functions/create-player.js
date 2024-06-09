@@ -30,6 +30,7 @@ const addPlayerToGameJSON = (playerName) => {
 const createPlayerBar = (player) => {
   let el_playerBar = document.createElement('div');
   el_playerBar.classList.add('player-bar');
+  el_playerBar.setAttribute('data-player-name', player.name);
   el_playerBar.innerHTML = `
     <div class="inner">
       <span class="name">${player.name}</span>
@@ -42,6 +43,7 @@ const createPlayerBar = (player) => {
     </div>
   `;
   el_leaderboard.append(el_playerBar);
+  el_playerBar.addEventListener('click', openPlayerDrawer, true);
 }
 
 /*
