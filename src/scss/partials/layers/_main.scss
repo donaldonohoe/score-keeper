@@ -22,6 +22,7 @@
   height: 100px;
   display: flex;
   cursor: pointer;
+  transition: transform 0.5s $ease;
   .inner {
     display: grid;
     width: 100%;
@@ -59,6 +60,7 @@
         align-items: center;
         justify-content: end;
         width: 0; // default
+        min-width: 10px;
         height: 10px;
         background-color: $white;
         border-radius: 5px;
@@ -68,6 +70,7 @@
           transform: translateX(calc(100% + 10px));
         }
         &[data-current-score="0"] {
+          min-width: 0;
           .current-score {
             transform: translateX(100%);
           }

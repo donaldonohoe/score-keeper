@@ -1,6 +1,9 @@
 let gameJSON;
 
 const drawerSlideTime = 200;
+const playerMeterSlideTime = 500;
+
+
 
 let TEST_GAME_JSON = {
   'game_created_timestamp': 1717452024450,
