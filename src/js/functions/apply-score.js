@@ -1,5 +1,6 @@
 
-const updatePlayerObject = (player, score) => {
+const applyScoreToGameJSON = (player, score) => {
+  // Update player object
   player.current_score += score;
   player.play_count += 1;
   let history = player.play_history;
@@ -7,6 +8,12 @@ const updatePlayerObject = (player, score) => {
   player.stats.highest_score = Math.max(...history);
   player.stats.lowest_score = Math.min(...history);
   player.stats.average_score = history => history.reduce((a, b) => a + b) / history.length;
+  // Update game history
+  let historyItem = {
+    'timestamp': new Date(),
+    'action': `${player.name} scored ${score}`
+  }
+  gameJSON.game_session.history.push(historyItem);
   // Save game
   saveGameJSON();
 }
@@ -48,7 +55,7 @@ const applyScore = (score) => {
   let playerName = el_playerDrawer.getAttribute('data-player-name');
   let player = gameJSON.game_session.players.find(player => player.name == playerName);
   // Update player object
-  updatePlayerObject(player, score);
+  applyScoreToGameJSON(player, score);
   // Update player bar
   updatePlayerBar(player);
   // Close drawer

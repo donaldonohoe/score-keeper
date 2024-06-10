@@ -14,7 +14,7 @@ const addPlayerToGameJSON = (playerName) => {
   // Update game history
   let historyItem = {
     'timestamp': new Date(),
-    'action': `${playerName} was added to the game.`
+    'action': `${playerName} was added to the game`
   }
   gameJSON.game_session.history.push(historyItem);
   // Update game historical players list
