@@ -1,5 +1,5 @@
 
-// Close open drawer
+// Close drawer function
 const closeDrawer = () => {
   // Close active drawer(s)
   document.querySelectorAll('.drawer.active').forEach((drawer) => drawer.classList.remove('active'));
@@ -21,6 +21,11 @@ const closeDrawerEscKey = (e) => {
     closeDrawer();
   }
 }
+
+// Close drawer on click close button
+els_close_drawer_buttons.forEach((closeButton) => {
+  closeButton.addEventListener('click', closeDrawer, true);
+});
 
 // Open player drawer
 const openPlayerDrawer = (e) => {

@@ -14,6 +14,7 @@ const el_gameInfoButton = document.getElementById('game-info-button');
 
 // Drawers
 const els_drawers = document.querySelectorAll('.drawer');
+const els_close_drawer_buttons = document.querySelectorAll('.drawer .close-button');
 
 // Add player drawer
 const el_addPlayerDrawer = document.getElementById('add-player-drawer');
