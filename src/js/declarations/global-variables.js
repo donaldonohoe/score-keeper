@@ -1,5 +1,9 @@
 let gameJSON;
 
+// Measures
+let playerBarHeight = 100; // px (default)
+
+// Transitions
 const drawerSlideTime = 200;
 const playerMeterSlideTime = 500;
 

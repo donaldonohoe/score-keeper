@@ -8,6 +8,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   button {
+    position: relative;
     font-size: 18px;
     text-transform: uppercase;
     color: $white;
@@ -18,5 +19,14 @@
     &:active {
       background-color: $app_black_80;
     }
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $player_bar_height;
+    background: linear-gradient(to top, $app_black, transparent);
   }
 }

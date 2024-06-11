@@ -5,7 +5,7 @@
   left: -1px;
   width: calc(100% + 1px);
   height: calc(100% + 1px);
-  background-size: 100px 100px;
+  background-size: $player_bar_height $player_bar_height;
   background-image: 
     linear-gradient(to right, $app_black_80 1px, transparent 1px), 
     linear-gradient(to bottom, $app_black_80 1px, transparent 1px);
@@ -14,12 +14,15 @@
 #leaderboard {
   position: relative;
   width: 100%;
+  height: 100%;
+  overflow: auto; // allow scroll if players exceed height
+  padding-bottom: $player_bar_height;
 }
 
 .player-bar {
   position: relative;
   width: 100%;
-  height: 100px;
+  height: $player_bar_height;
   display: flex;
   cursor: pointer;
   transition: transform 0.5s $ease;
