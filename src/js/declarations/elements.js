@@ -32,3 +32,5 @@ const el_settingsDrawer = document.getElementById('settings-drawer');
 
 // Game info drawer
 const el_gameInfoDrawer = document.getElementById('game-info-drawer');
+const el_gameInfoStats = document.getElementById('game-info-stats');
+const el_gameInfoHistory = document.getElementById('game-info-history');

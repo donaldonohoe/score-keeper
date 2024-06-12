@@ -63,9 +63,11 @@ const jsCompile = [
           
         ],
         functions : [
+          'handle-timestamp.js',
           'open-close-drawer.js',
           'load-game.js',
           'update-leaderboard.js',
+          'update-game-info.js',
           'create-new-game.js',
           'create-player.js',
           'apply-score.js'
