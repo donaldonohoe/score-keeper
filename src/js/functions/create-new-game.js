@@ -11,9 +11,9 @@ const createNewGame = (gameInStorage) => {
     gameJSON = new Object();
   }
   // Create timestamp
-  gameJSON.game_created_timestamp = Date.now();
+  //gameJSON.game_created_timestamp = Date.now(); // e.g. 1718318089889
   // Create readable timestamp
-  gameJSON.game_created_readable = new Date();
+  gameJSON.game_created_timestamp = Date(); // e.g. 'Thu Jun 13 2024 23:34:49 GMT+0100 (Irish Standard Time)'
   // Create game session
   gameJSON.game_session = {
     'players': [],

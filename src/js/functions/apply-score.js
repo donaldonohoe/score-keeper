@@ -10,10 +10,11 @@ const applyScoreToGameJSON = (player, score) => {
   player.stats.average_score = (history.reduce((a, b) => a + b) / history.length).toFixed(2);
   // Update game history
   let historyItem = {
-    'timestamp': new Date(),
+    'timestamp': Date(),
     'action': `${player.name} scored ${score}`
   }
   gameJSON.game_session.history.push(historyItem);
+  gameHistoryAdd(historyItem);
   // Save game
   saveGameJSON();
 }

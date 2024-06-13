@@ -6,7 +6,7 @@ const gameHistoryAdd = (item) => {
   const createDateMarker = (item) => {
     let el_dateMarker = document.createElement('span');
     el_dateMarker.classList.add('date-marker');
-    el_dateMarker.innerHTML = formatTimestampDMY(item.timestamp);
+    el_dateMarker.innerHTML = formatTimestampDateFull(item.timestamp);
     el_gameInfoHistory.append(el_dateMarker);
   }
 

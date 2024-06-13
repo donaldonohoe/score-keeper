@@ -13,10 +13,11 @@ const addPlayerToGameJSON = (playerName) => {
   gameJSON.game_session.players.push(newPlayer);
   // Update game history
   let historyItem = {
-    'timestamp': new Date(),
+    'timestamp': Date(), // e.g. 'Thu Jun 13 2024 23:34:49 GMT+0100 (Irish Standard Time)'
     'action': `${playerName} was added to the game`
   }
   gameJSON.game_session.history.push(historyItem);
+  gameHistoryAdd(historyItem);
   // Update game historical players list
   let historicalPlayers = gameJSON.game_historical_players;
   if(!historicalPlayers.includes(playerName)) {
