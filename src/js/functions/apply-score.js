@@ -7,7 +7,7 @@ const applyScoreToGameJSON = (player, score) => {
   history.push(score);
   player.stats.highest_score = Math.max(...history);
   player.stats.lowest_score = Math.min(...history);
-  player.stats.average_score = (history.reduce((a, b) => a + b) / history.length).toFixed(2);
+  player.stats.average_score = parseFloat((history.reduce((a, b) => a + b) / history.length).toFixed(2));
   // Update game history
   let historyItem = {
     'timestamp': Date(),
