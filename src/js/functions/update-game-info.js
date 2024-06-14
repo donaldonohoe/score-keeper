@@ -35,3 +35,72 @@ const gameHistoryAdd = (item) => {
   el_gameInfoHistory.append(el_historyItem);
 
 }
+
+
+
+// Update game stats
+const updateGameStats = () => {
+
+  // Current leader in game
+  let leadingPlayer = gameJSON.game_session.players.find(player => player.current_ranking == 1);
+
+  // Highest, lowest and average scores in game
+  let gameHighestScore = gameLowestScore = gameHighestAverageScore = gameLowestAverageScore = 0;
+  let gameHighestScorePlayer, gameLowestScorePlayer, gameHighestAverageScorePlayer, gameLowestAverageScorePlayer;
+  let allPlayerScores = [];
+  gameJSON.game_session.players.forEach((player, i) => {
+    // Use first player scores as benchmarks
+    if(i == 0) {
+      gameHighestScore = player.stats.highest_score;
+      gameLowestScore = player.stats.lowest_score;
+      gameHighestAverageScore = gameLowestAverageScore = player.stats.average_score; 
+      gameHighestScorePlayer = gameLowestScorePlayer = gameHighestAverageScorePlayer = gameLowestAverageScorePlayer = player;
+    }
+    // For subsequent players 
+    else {
+      // Check against running highest score
+      if(player.stats.highest_score > gameHighestScore) {
+        gameHighestScore = player.stats.highest_score;
+        gameHighestScorePlayer = player;
+      }
+      // Check against running lowest score
+      if(player.stats.lowest_score < gameLowestScore) {
+        gameLowestScore = player.stats.lowest_score;
+        gameLowestScorePlayer = player;
+      } 
+      // Check against running highest average score
+      if(player.stats.average_score > gameHighestAverageScore) {
+        gameHighestAverageScore = player.stats.average_score;
+        gameHighestAverageScorePlayer = player;
+      }
+      // Check against running lowest average score
+      else if (player.stats.average_score < gameLowestAverageScore) {
+        gameLowestAverageScore = player.stats.average_score;
+        gameLowestAverageScorePlayer = player;
+      }
+    }
+    // Push player scores to all player scores array
+    allPlayerScores = allPlayerScores.concat(player.play_history);
+  });
+
+  // Update game stats HTML
+  el_gameInfoStats.innerHTML = `
+    <span class="stats-item">
+      <span class="label">Game Leader</span>
+      <span class="value">${leadingPlayer.name} (${leadingPlayer.current_score})</span>
+    </span>
+    <span class="stats-item">
+      <span class="label">Highest Score</span>
+      <span class="value">${gameHighestScorePlayer.name} (${gameHighestScore})</span>
+    </span>
+    <span class="stats-item">
+      <span class="label">Lowest Score</span>
+      <span class="value">${gameLowestScorePlayer.name} (${gameLowestScore})</span>
+    </span>
+    <span class="stats-item">
+      <span class="label">Average Score</span>
+      <span class="value">${(allPlayerScores.reduce((a, b) => a + b) / allPlayerScores.length).toFixed(2)}</span>
+    </span>
+  `;
+
+}

@@ -6,4 +6,6 @@ const loadGameFromStorage = (gameJSON) => {
   updateLeaderboard();
   // Create game history
   gameJSON.game_session.history.forEach((item) => gameHistoryAdd(item));
+  // Create game stats
+  updateGameStats();
 }

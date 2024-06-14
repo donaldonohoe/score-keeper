@@ -17,7 +17,7 @@ const createNewGame = (gameInStorage) => {
   // Create game session
   gameJSON.game_session = {
     'players': [],
-    'stats': {},
+    //'stats': {},
     'history': []
   };
   // Create historical players list
