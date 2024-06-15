@@ -40,5 +40,8 @@ const applyScore = (score) => {
   closeDrawer();
   el_playerScoreInput.value = ''; // Reset drawer input
   // Update Leaderboard
-  setTimeout(() => updateLeaderboard(), drawerSlideTime);
+  setTimeout(() => {
+    updateLeaderboard();
+    updateGameStats();
+  }, drawerSlideTime);
 }
