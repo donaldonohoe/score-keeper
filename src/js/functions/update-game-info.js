@@ -87,19 +87,27 @@ const updateGameStats = () => {
     // Update game stats HTML
     el_gameInfoStats.innerHTML = `
       <span class="stats-item">
-        <span class="label">Game Leader</span>
+        <span class="label">Leader:</span>
         <span class="value">${leadingPlayer.name} (${leadingPlayer.current_score})</span>
       </span>
       <span class="stats-item">
-        <span class="label">Highest Score</span>
-        <span class="value">${gameHighestScorePlayer.name} (${gameHighestScore})</span>
+        <span class="label">Highest Score:</span>
+        <span class="value">${gameHighestScore} (${gameHighestScorePlayer.name})</span>
       </span>
       <span class="stats-item">
-        <span class="label">Lowest Score</span>
-        <span class="value">${gameLowestScorePlayer.name} (${gameLowestScore})</span>
+        <span class="label">Lowest Score:</span>
+        <span class="value">${gameLowestScore} (${gameLowestScorePlayer.name})</span>
       </span>
       <span class="stats-item">
-        <span class="label">Average Score</span>
+        <span class="label">Highest Average Score:</span>
+        <span class="value">${gameHighestAverageScore} (${gameHighestAverageScorePlayer.name})</span>
+      </span>
+      <span class="stats-item">
+        <span class="label">Lowest Average Score:</span>
+        <span class="value">${gameLowestAverageScore} (${gameLowestAverageScorePlayer.name})</span>
+      </span>
+      <span class="stats-item">
+        <span class="label">Overall Average Score:</span>
         <span class="value">${(allPlayerScores.reduce((a, b) => a + b) / allPlayerScores.length).toFixed(2)}</span>
       </span>
     `;
