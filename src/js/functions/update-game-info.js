@@ -88,23 +88,28 @@ const updateGameStats = () => {
     el_gameInfoStats.innerHTML = `
       <span class="stats-item">
         <span class="label">Leader:</span>
-        <span class="value">${leadingPlayer.name} (${leadingPlayer.current_score})</span>
+        <span class="value">${leadingPlayer.name}</span>
+        <span class="value-context">(${leadingPlayer.current_score})</span>
       </span>
       <span class="stats-item">
         <span class="label">Highest Score:</span>
-        <span class="value">${gameHighestScore} (${gameHighestScorePlayer.name})</span>
+        <span class="value">${gameHighestScore}</span>
+        <span class="value-context">(${gameHighestScorePlayer.name})</span>
       </span>
       <span class="stats-item">
         <span class="label">Lowest Score:</span>
-        <span class="value">${gameLowestScore} (${gameLowestScorePlayer.name})</span>
+        <span class="value">${gameLowestScore}</span>
+        <span class="value-context">(${gameLowestScorePlayer.name})</span>
       </span>
       <span class="stats-item">
         <span class="label">Highest Average Score:</span>
-        <span class="value">${gameHighestAverageScore} (${gameHighestAverageScorePlayer.name})</span>
+        <span class="value">${gameHighestAverageScore}</span>
+        <span class="value-context">(${gameHighestAverageScorePlayer.name})</span>
       </span>
       <span class="stats-item">
         <span class="label">Lowest Average Score:</span>
-        <span class="value">${gameLowestAverageScore} (${gameLowestAverageScorePlayer.name})</span>
+        <span class="value">${gameLowestAverageScore}</span>
+        <span class="value-context">(${gameLowestAverageScorePlayer.name})</span>
       </span>
       <span class="stats-item">
         <span class="label">Overall Average Score:</span>

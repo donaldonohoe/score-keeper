@@ -19,7 +19,7 @@
     overflow: auto;
     .drawer-section {
       display: block;
-      margin-bottom: 50px;
+      margin-bottom: 70px;
       .drawer-section-heading {
         display: block;
         font-size: 24px;
@@ -130,9 +130,9 @@
       #game-info-stats {
         .stats-item {
           display: grid;
-          grid-template-columns: max-content auto;
-          grid-gap: 20px;
-          margin-bottom: 20px;
+          grid-template-columns: minmax(250px, max-content) auto;
+          grid-gap: 5px 20px;
+          margin-bottom: 15px;
           .label {
             font-size: 18px;
             text-transform: uppercase;
@@ -141,6 +141,21 @@
           .value {
             font-size: 18px;
             justify-self: end;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 100%;
+          }
+          .value-context {
+            grid-column: 2;
+            grid-row: 2;
+            font-size: 14px;
+            color: $app_black_30;
+            justify-self: end;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 100%;
           }
         }
       }
