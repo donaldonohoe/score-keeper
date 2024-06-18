@@ -119,3 +119,32 @@ const updateGameStats = () => {
   }
 
 }
+
+
+
+// Update player stats
+const updatePlayerStats = (player) => {
+
+  if(player.play_count > 0) {
+    // Update player stats HTML
+    el_playerStats.innerHTML = `
+      <span class="stats-item">
+        <span class="label">Current position:</span>
+        <span class="value">${getOrdinal(player.current_ranking)} (of ${gameJSON.game_session.players.length})</span>
+      </span>
+      <span class="stats-item">
+        <span class="label">Highest Score:</span>
+        <span class="value">${player.stats.highest_score}</span>
+      </span>
+      <span class="stats-item">
+        <span class="label">Lowest Score:</span>
+        <span class="value">${player.stats.lowest_score}</span>
+      </span>
+      <span class="stats-item">
+        <span class="label">Average Score:</span>
+        <span class="value">${player.stats.average_score}</span>
+      </span>
+    `;
+  }
+
+}

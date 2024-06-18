@@ -34,6 +34,7 @@ const openPlayerDrawer = (e) => {
   // Populate drawer with player data
   el_playerDrawer.setAttribute('data-player-name', player.name);
   el_playerDrawer.querySelector('.drawer-header').innerHTML = player.name;
+  updatePlayerStats(player);
   // Open drawer
   el_playerDrawer.classList.add('active');
   // Enable event listeners when drawer is open

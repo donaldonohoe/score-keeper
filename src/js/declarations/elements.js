@@ -26,6 +26,7 @@ const el_addPlayerChips = document.getElementById('add-player-chips');
 const el_playerDrawer = document.getElementById('player-drawer');
 const el_playerScoreInput = document.getElementById('player-score-input');
 const el_playerScoreSubmit = document.getElementById('player-score-submit');
+const el_playerStats = document.getElementById('player-stats');
 
 // Settings drawer
 const el_settingsDrawer = document.getElementById('settings-drawer');

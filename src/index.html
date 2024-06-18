@@ -54,9 +54,15 @@
       <aside id="player-drawer" class="drawer from-bottom">
         <h2 class="drawer-header">Player</h2>
         <div class="inner">
-          <div class="input-block">
-            <input id="player-score-input" type="number" autocomplete="off">
-            <button id="player-score-submit">+</button>
+          <div class="drawer-section">
+            <div class="input-block">
+              <input id="player-score-input" type="number" autocomplete="off">
+              <button id="player-score-submit">+</button>
+            </div>
+          </div> 
+          <div class="drawer-section">
+            <h3 class="drawer-section-heading">Player Stats</h3>
+            <div id="player-stats" class="stats"></div>
           </div>
         </div>
         <button class="close-button"></button>
@@ -74,7 +80,7 @@
         <div class="inner">
           <div class="drawer-section">
             <h3 class="drawer-section-heading">Game Stats</h3>
-            <div id="game-info-stats"></div>
+            <div id="game-info-stats" class="stats"></div>
           </div>
           <div class="drawer-section">
             <h3 class="drawer-section-heading">Game History</h3>
