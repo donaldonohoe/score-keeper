@@ -108,7 +108,7 @@ const updateGameStats = () => {
       </span>
       <span class="stats-item">
         <span class="label">Overall Average Score:</span>
-        <span class="value">${(allPlayerScores.reduce((a, b) => a + b) / allPlayerScores.length).toFixed(2)}</span>
+        <span class="value">${parseFloat((allPlayerScores.reduce((a, b) => a + b) / allPlayerScores.length).toFixed(2))}</span>
       </span>
     `;
   }
