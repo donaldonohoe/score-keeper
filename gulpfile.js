@@ -71,6 +71,7 @@ const jsCompile = [
           'update-game-info.js',
           'create-new-game.js',
           'create-player.js',
+          'remove-player.js',
           'apply-score.js'
         ],
         layers : [

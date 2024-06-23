@@ -86,4 +86,11 @@
       background-color: rgba($app_black_80, 0.8);
     }
   }
+  &.remove {
+    .inner {
+      transform: scale(0.9);
+      opacity: 0;
+      transition: all 0.5s $ease;
+    }
+  }
 } // .player-bar
