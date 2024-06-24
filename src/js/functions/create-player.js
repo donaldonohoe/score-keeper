@@ -44,6 +44,10 @@ const createPlayerBar = (player) => {
     </div>
   `;
   el_leaderboard.append(el_playerBar);
+  // Set initial position at end
+  let numberOfExistingPlayers = el_leaderboard.querySelectorAll('.player-bar').length - 1;
+  el_playerBar.style.transform = `translateY(${numberOfExistingPlayers * playerBarHeight}px)`;
+  // Apply player bar event listener
   el_playerBar.addEventListener('click', openPlayerDrawer, true);
 }
 

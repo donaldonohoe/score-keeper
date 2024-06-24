@@ -20,7 +20,9 @@
 }
 
 .player-bar {
-  position: relative;
+  position: absolute; // positioning is done by translateY()
+  top: 0;
+  left: 0;
   width: 100%;
   height: $player_bar_height;
   display: flex;

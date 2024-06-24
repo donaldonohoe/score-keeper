@@ -25,10 +25,14 @@ const updateLeaderboard = () => {
 
   // Function to position player bar based on ranking
   const playerBarToPosition = (player) => {
-    let positionsToMove = (player.created_index - player.current_ranking) * -1;
+    // let positionsToMove = (player.created_index - player.current_ranking) * -1;
+    // let playerBar = el_leaderboard.querySelector(`.player-bar[data-player-name='${player.name}']`);
+    // setTimeout(() => {
+    //   playerBar.style.transform = `translateY(${positionsToMove * playerBarHeight}px)`;
+    // }, playerMeterSlideTime);
     let playerBar = el_leaderboard.querySelector(`.player-bar[data-player-name='${player.name}']`);
     setTimeout(() => {
-      playerBar.style.transform = `translateY(${positionsToMove * playerBarHeight}px)`;
+      playerBar.style.transform = `translateY(${(player.current_ranking - 1) * playerBarHeight}px)`;
     }, playerMeterSlideTime);
   }
 
