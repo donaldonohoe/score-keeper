@@ -43,10 +43,11 @@ const createPlayerBar = (player) => {
       </div>
     </div>
   `;
-  el_leaderboard.append(el_playerBar);
+  el_playerBars.append(el_playerBar);
   // Set initial position at end
-  let numberOfExistingPlayers = el_leaderboard.querySelectorAll('.player-bar').length - 1;
-  el_playerBar.style.transform = `translateY(${numberOfExistingPlayers * playerBarHeight}px)`;
+  let numberOfPlayerBars = el_playerBars.querySelectorAll('.player-bar').length;
+  el_playerBar.style.transform = `translateY(${(numberOfPlayerBars - 1) * playerBarHeight}px)`;
+  el_playerBars.style.height = `${numberOfPlayerBars * playerBarHeight}px`;
   // Apply player bar event listener
   el_playerBar.addEventListener('click', openPlayerDrawer, true);
 }

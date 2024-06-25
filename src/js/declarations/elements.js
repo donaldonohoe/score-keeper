@@ -4,6 +4,7 @@ const el_gameFrame = document.getElementById('game-frame');
 
 // Leaderboard
 const el_leaderboard = document.getElementById('leaderboard');
+const el_playerBars = el_leaderboard.querySelector('#player-bars');
 
 // Game nav
 const el_gameNav = document.getElementById('game-nav');

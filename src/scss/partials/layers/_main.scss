@@ -17,6 +17,10 @@
   height: 100%;
   overflow: auto; // allow scroll if players exceed height
   padding-bottom: $player_bar_height;
+  #player-bars {
+    position: relative;
+    width: 100%;
+  }
 }
 
 .player-bar {

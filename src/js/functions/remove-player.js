@@ -27,6 +27,8 @@ const removePlayerBar = (player) => {
   playerBar.classList.add('remove');
   setTimeout(() => {
     playerBar.remove();
+    let numberOfPlayerBars = el_playerBars.querySelectorAll('.player-bar').length;
+    el_playerBars.style.height = `${numberOfPlayerBars * playerBarHeight}px`;
   }, playerRemoveTime);
 }
 
