@@ -78,7 +78,8 @@
           font-size: 24px;
           transform: translateX(calc(100% + 10px));
         }
-        &[data-current-score="0"] {
+        &[data-current-score="0"],
+        &[data-current-score^="-"] {
           min-width: 0;
           .current-score {
             transform: translateX(100%);
