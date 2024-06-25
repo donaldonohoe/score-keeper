@@ -1,14 +1,16 @@
 
 // Apply score with Enter key
 el_playerScoreInput.addEventListener("keyup", ({key}) => {
-  if(key === "Enter") {
+  if(key === "Enter" && el_playerScoreInput.value) {
     applyScore(parseFloat(el_playerScoreInput.value));
   }
 });
 
 // Apply score on button click
 el_playerScoreSubmit.addEventListener('click', (e) => {
-  applyScore(parseFloat(el_playerScoreInput.value));
+  if(el_playerScoreInput.value) {
+    applyScore(parseFloat(el_playerScoreInput.value));
+  }
 });
 
 // Remove player
