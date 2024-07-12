@@ -146,5 +146,9 @@ const updatePlayerStats = (player) => {
       </span>
     `;
   }
+  else {
+    // Reset player stats HTML
+    el_playerStats.innerHTML = `<p>${player.name} hasn't played yet...</p>`;
+  }
 
 }
