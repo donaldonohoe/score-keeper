@@ -59,22 +59,22 @@ const updateGameStats = () => {
     // For subsequent players 
     else {
       // Check against running highest score
-      if(player.stats.highest_score && player.stats.highest_score > gameHighestScore) {
+      if(player.stats.highest_score !== undefined && player.stats.highest_score > gameHighestScore) {
         gameHighestScore = player.stats.highest_score;
         gameHighestScorePlayer = player;
       }
       // Check against running lowest score
-      if(player.stats.lowest_score && player.stats.lowest_score < gameLowestScore) {
+      if(player.stats.lowest_score !== undefined && player.stats.lowest_score < gameLowestScore) {
         gameLowestScore = player.stats.lowest_score;
         gameLowestScorePlayer = player;
       } 
       // Check against running highest average score
-      if(player.stats.average_score && player.stats.average_score > gameHighestAverageScore) {
+      if(player.stats.average_score !== undefined && player.stats.average_score > gameHighestAverageScore) {
         gameHighestAverageScore = player.stats.average_score;
         gameHighestAverageScorePlayer = player;
       }
       // Check against running lowest average score
-      else if (player.stats.average_score && player.stats.average_score < gameLowestAverageScore) {
+      else if (player.stats.average_score !== undefined && player.stats.average_score < gameLowestAverageScore) {
         gameLowestAverageScore = player.stats.average_score;
         gameLowestAverageScorePlayer = player;
       }
