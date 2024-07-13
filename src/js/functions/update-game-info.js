@@ -129,8 +129,16 @@ const updatePlayerStats = (player) => {
     // Update player stats HTML
     el_playerStats.innerHTML = `
       <span class="stats-item">
+        <span class="label">Current score:</span>
+        <span class="value">${player.current_score}</span>
+      </span>
+      <span class="stats-item">
         <span class="label">Current position:</span>
         <span class="value">${getOrdinal(player.current_ranking)} (of ${gameJSON.game_session.players.length})</span>
+      </span>
+      <span class="stats-item">
+        <span class="label">Number of plays:</span>
+        <span class="value">${player.play_count}</span>
       </span>
       <span class="stats-item">
         <span class="label">Highest Score:</span>
