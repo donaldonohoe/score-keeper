@@ -20,7 +20,7 @@ const updateLeaderboard = () => {
     let bar = playerBar.querySelector('.score-meter .bar');
     let score = bar.getAttribute('data-current-score');
     playerBar.querySelector('.score-meter').style.paddingRight = `${scoreSpanMaxWidth + 10}px`;
-    bar.style.width = `${(score/highestCurrentScore)*100}%`;
+    bar.style.width = score < 0 ? 0 : `${(score/highestCurrentScore)*100}%`; // 0 width if minus score, else % of highest score
   });
 
   // Function to position player bar based on ranking
