@@ -69,16 +69,18 @@ const jsCompile = [
           'load-game.js',
           'update-leaderboard.js',
           'update-game-info.js',
+          'apply-score.js',
           'create-new-game.js',
+          'restart-game.js',
           'create-player.js',
           'remove-player.js',
-          'apply-score.js'
         ],
         layers : [
           'intro.js',
           'main.js',
           'add-player-drawer.js',
-          'player-drawer.js'
+          'player-drawer.js',
+          'settings-drawer.js'
         ]
       }
     ]
