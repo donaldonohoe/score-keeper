@@ -33,6 +33,7 @@ const el_removePlayerButton = document.getElementById('remove-player-button');
 // Settings drawer
 const el_settingsDrawer = document.getElementById('settings-drawer');
 const el_restartGameButton = document.getElementById('restart-game-button');
+const el_newGameButton = document.getElementById('new-game-button');
 
 // Game info drawer
 const el_gameInfoDrawer = document.getElementById('game-info-drawer');

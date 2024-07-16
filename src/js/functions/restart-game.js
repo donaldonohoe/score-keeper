@@ -1,4 +1,5 @@
 
+// Restart game with same players
 const restartGame = () => {
 
   // Update Game JSON
@@ -32,6 +33,40 @@ const restartGame = () => {
   setTimeout(() => {
     updateLeaderboard();
   }, drawerSlideTime);
+
+  // Close drawer
+  closeDrawer();
+}
+
+
+
+// Start new game with no players
+const restartGameNew = () => {
+
+  // Update Game JSON
+  // Reset game timestamp
+  gameJSON.game_created_timestamp = Date(); // e.g. 'Thu Jun 13 2024 23:34:49 GMT+0100 (Irish Standard Time)'
+  // Reset game history
+  gameJSON.game_session.history = [];
+  // Reset players
+  gameJSON.game_session.players = [];
+  // Save game
+  saveGameJSON();
+
+  // Reset game info (drawer)
+  el_gameInfoStats.innerHTML = '';
+  el_gameInfoHistory.innerHTML = '';
+
+  // Reset Leaderboard
+  el_leaderboard.querySelectorAll('.player-bar').forEach((playerBar, i) => {
+    // Remove player bars with sequential delays
+    setTimeout(() => {
+      playerBar.classList.add('remove');
+      setTimeout(() => {
+        playerBar.remove();
+      }, playerRemoveTime);  
+    }, i*100);  
+  });
 
   // Close drawer
   closeDrawer();
