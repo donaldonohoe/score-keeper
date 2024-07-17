@@ -62,6 +62,9 @@ const jsCompile = [
         plugins : [
           
         ],
+        components : [
+          'buttons.js'
+        ],
         functions : [
           'handle-timestamp.js',
           'get-ordinal.js',

@@ -215,7 +215,7 @@
     .settings-item {
       display: grid;
       grid-template-columns: auto auto;
-      grid-gap: 15px;
+      grid-gap: 30px;
       margin-bottom: 20px;
       .label {
         justify-self: start;
@@ -231,18 +231,6 @@
       }
       .option {
         justify-self: end;
-        .action-button {
-          font-size: 18px;
-          text-transform: uppercase;
-          color: $app_black;
-          background-color: $white;
-          padding: 10px 15px;
-          border-radius: 10px;
-          transition: all 0.2s $ease;
-          &:hover {
-            background-color: $app_black_10;
-          }
-        }
       }
     }
   }

@@ -1,4 +1,7 @@
 
+// Components
+const els_segmentedButtons = document.querySelectorAll('.segmented-button');
+
 // Game frame
 const el_gameFrame = document.getElementById('game-frame');
 
