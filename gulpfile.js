@@ -77,6 +77,7 @@ const jsCompile = [
           'restart-game.js',
           'create-player.js',
           'remove-player.js',
+          'misc.js'
         ],
         layers : [
           'intro.js',
