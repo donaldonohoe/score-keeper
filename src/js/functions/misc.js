@@ -65,7 +65,7 @@ const doCustomCode = (customCode, customFunction) => {
 // Load sample game for testing
 const loadSampleGame = () => {
   restartGameNew();
-  createNewGame(false);
+  createNewGame(true);
   let samplePlayers = [
     { name: 'Adam', scores: [35, 22, 45] },
     { name: 'Barbara', scores: [24, 25, 18] },

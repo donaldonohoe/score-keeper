@@ -23,16 +23,15 @@ const updateLeaderboard = () => {
     bar.style.width = score <= 0 ? 0 : `${(score/highestCurrentScore)*100}%`; // 0 width if minus score, else % of highest score
   });
 
-  // Function to position player bar based on ranking
+  // Function to position player bar based on player order type setting
   const playerBarToPosition = (player) => {
-    // let positionsToMove = (player.created_index - player.current_ranking) * -1;
-    // let playerBar = el_leaderboard.querySelector(`.player-bar[data-player-name='${player.name}']`);
-    // setTimeout(() => {
-    //   playerBar.style.transform = `translateY(${positionsToMove * playerBarHeight}px)`;
-    // }, playerMeterSlideTime);
     let playerBar = el_leaderboard.querySelector(`.player-bar[data-player-name='${player.name}']`);
     setTimeout(() => {
-      playerBar.style.transform = `translateY(${(player.current_ranking - 1) * playerBarHeight}px)`;
+      let position = player.current_ranking - 1; // Player order type 'score' as default
+      if(gameJSON.game_settings.players_listed_by == 'created') { // Check settings if order type is 'created'
+        position = player.created_index - 1;
+      }
+      playerBar.style.transform = `translateY(${position * playerBarHeight}px)`;
     }, playerMeterSlideTime);
   }
 

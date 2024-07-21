@@ -72,6 +72,7 @@ const jsCompile = [
           'load-game.js',
           'update-leaderboard.js',
           'update-game-info.js',
+          'update-settings.js',
           'apply-score.js',
           'create-new-game.js',
           'restart-game.js',

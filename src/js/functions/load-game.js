@@ -8,4 +8,6 @@ const loadGameFromStorage = (gameJSON) => {
   gameJSON.game_session.history.forEach((item) => gameHistoryAdd(item));
   // Create game stats
   updateGameStats();
+  // Apply settings from data load
+  setPlayerOrderTypeButton();
 }

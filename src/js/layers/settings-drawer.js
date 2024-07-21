@@ -14,3 +14,8 @@ el_newGameButton.addEventListener('click', (e) => {
     restartGameNew();
   }
 });
+
+// Player order type
+el_playerOrderTypeButton.addEventListener('click', (e) => {
+  updatePlayerOrderType();
+});

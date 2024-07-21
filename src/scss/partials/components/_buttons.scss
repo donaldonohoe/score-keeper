@@ -45,7 +45,7 @@
     background-color: $app_black_70;
   }
   // Option 1 selected
-  &[data-value="0"] {
+  &[data-selected="0"] {
     &:before { // Switch
       left: 0;
     }
@@ -56,7 +56,7 @@
     }
   }
   // Option 2 selected
-  &[data-value="1"] {
+  &[data-selected="1"] {
     &:before { // Switch
       left: 50%;
     }
