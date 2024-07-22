@@ -9,9 +9,13 @@
   <meta name="keywords" content="Game, score, score keeper, score tracker, player, winner, game stats, game history" />
   <meta name="author" content="Donal Donohoe" />
   <title>Score Keeper</title>
-  <style></style>
 
   <!-- Styles -->
+  <script type="text/javascript">
+    // Ref: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  </script>
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
   <!-- Scripts -->
