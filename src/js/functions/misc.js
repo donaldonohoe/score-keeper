@@ -75,8 +75,9 @@ const loadSampleGame = () => {
   ];
   setTimeout(() => { // wait for previous game to be fully reset
     samplePlayers.forEach((p) => {
-      createPlayer(p.name); 
-      el_playerDrawer.setAttribute('data-player-name', p.name);
+			let playerName = p.name.toUpperCase();
+      createPlayer(playerName); 
+      el_playerDrawer.setAttribute('data-player-name', playerName);
       p.scores.forEach((s) => applyScore(s));
     });
   },1000);
