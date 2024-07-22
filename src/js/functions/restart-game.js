@@ -67,6 +67,7 @@ const restartGameNew = () => {
       }, playerRemoveTime);  
     }, i*100);  
   });
+  el_playerBars.style.height = 'auto';
 
   // Close drawer
   closeDrawer();
