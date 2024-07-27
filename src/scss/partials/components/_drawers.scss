@@ -67,10 +67,21 @@
           height: 40px;
           border-radius: 10px;
         }
-      }
-      .on-screen-keyboard {
-        display: none;
-        margin-top: 20px;
+        &[data-input-type="on-screen"] {
+          input {
+            pointer-events: none;
+            user-select: none;
+          }
+          &+.on-screen-keyboard {
+            display: block;
+            margin-top: 20px;
+          }
+        }
+        &[data-input-type="native"] {
+          &+.on-screen-keyboard {
+            display: none;
+          }
+        }
       }
       // Stats
       .stats {

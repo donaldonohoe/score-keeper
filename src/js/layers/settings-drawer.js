@@ -19,3 +19,8 @@ el_newGameButton.addEventListener('click', (e) => {
 el_playerOrderTypeButton.addEventListener('click', (e) => {
   updatePlayerOrderType();
 });
+
+// Keyboard Input type
+el_keyboardInputTypeButton.addEventListener('click', (e) => {
+  updateKeyboardInputType();
+});

@@ -18,3 +18,15 @@ const updatePlayerOrderType = () => {
   // Update leaderboard
   updateLeaderboard();
 }
+
+// Update keyboard input type
+const updateKeyboardInputType = () => {
+  let selectedIndex = el_keyboardInputTypeButton.getAttribute('data-selected');
+  let value = el_keyboardInputTypeButton.querySelectorAll('span')[selectedIndex].getAttribute('data-value');
+  // Update GameJSON settings
+  gameJSON.game_settings.keyboard_input_type = value;
+  // Save game
+  saveGameJSON();
+  // Update input type
+  document.querySelectorAll('.input-block').forEach((inputBlock) => inputBlock.setAttribute('data-input-type', value));
+}

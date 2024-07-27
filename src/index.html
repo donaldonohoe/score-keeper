@@ -47,7 +47,7 @@
         <h2 class="drawer-header">Add Player</h2>
         <div class="inner">
           <div class="drawer-section">
-            <div class="input-block">
+            <div class="input-block" data-input-type="on-screen">
               <input id="add-player-input" type="text" autocomplete="off" placeholder="Enter name">
               <button id="add-player-submit">+</button>
             </div>
@@ -148,6 +148,18 @@
               <button id="player-order-type-button" class="segmented-button" data-selected="0">
                 <span data-value="score">Score</span>
                 <span data-value="created">Created</span>
+              </button>
+            </div>
+          </div>
+          <div class="settings-item">
+            <div class="label">
+              <h3>Keyboard input</h3>
+              <p>How names and scores are entered</p>
+            </div>
+            <div class="option">
+              <button id="keyboard-input-type-button" class="segmented-button" data-selected="0">
+                <span data-value="on-screen">On-screen</span>
+                <span data-value="native">Native</span>
               </button>
             </div>
           </div>
