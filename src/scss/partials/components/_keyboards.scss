@@ -1,0 +1,49 @@
+
+.on-screen-keyboard {
+  .keys {
+    .key {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 50px;
+      border-radius: 5px;
+      background-color: $app_black_70;
+      font-size: 24px;
+      color: $white;
+      text-transform: uppercase;
+      transition: all 0.1s ease;
+      &:hover {
+        background-color: $app_black_60;
+      }
+      &:active {
+        background-color: $app_black_40;
+        transition: none;
+      }
+    }
+  }
+  // Letters only
+  &.alpha {
+    .keys {
+      .key-row {
+        display: grid;
+        grid-gap: 5px;
+        justify-content: center;
+        margin-bottom: 5px;
+        .key {
+          height: 55px;
+          font-size: 24px;
+        }
+        &:nth-of-type(1) {
+          grid-template-columns: repeat(10, minmax(20px, 9%));
+        }
+        &:nth-of-type(2) {
+          grid-template-columns: repeat(9, minmax(20px, 9%));
+        }
+        &:nth-of-type(3) {
+          grid-template-columns: repeat(8, minmax(20px, 9%));
+        }
+      }
+    }
+  }
+}
