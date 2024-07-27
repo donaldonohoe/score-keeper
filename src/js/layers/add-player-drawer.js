@@ -1,7 +1,9 @@
 
 // Focus on input on drawer open
 el_addPlayerButton.addEventListener('click', (e) => {
-  setTimeout(() => el_addPlayerInput.focus(), drawerSlideTime);
+  if(gameJSON.game_settings.keyboard_input_type == 'native') {
+    setTimeout(() => el_addPlayerInput.focus(), drawerSlideTime);
+  }
 });
 
 // Create player with Enter key
