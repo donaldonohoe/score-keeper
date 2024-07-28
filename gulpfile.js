@@ -63,7 +63,8 @@ const jsCompile = [
           
         ],
         components : [
-          'buttons.js'
+          'buttons.js',
+          'keyboards.js'
         ],
         functions : [
           'handle-timestamp.js',
