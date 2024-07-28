@@ -13,6 +13,16 @@
       color: $white;
       text-transform: uppercase;
       transition: all 0.1s ease;
+      user-select: none; // Prevent natively selecting character on touch screens
+      -webkit-user-select: none; /* Safari */
+      touch-action: manipulation; // Prevent double-tap zoom in on touch screens
+      // Backspace button
+      &[data-value="delete"] {
+        padding: 10px 5px;
+        svg {
+          max-height: 30px;
+        }
+      }
       &:hover {
         background-color: $app_black_60;
       }
