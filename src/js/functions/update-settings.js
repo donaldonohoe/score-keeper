@@ -29,4 +29,7 @@ const updateKeyboardInputType = () => {
   saveGameJSON();
   // Update input type
   document.querySelectorAll('.input-block').forEach((inputBlock) => inputBlock.setAttribute('data-input-type', value));
+  // Handle number input for decimals
+  let playerScoreInputType = value == 'on-screen' ? 'text' : value == 'native' ? 'number' : 'text';
+  el_playerScoreInput.setAttribute('type', playerScoreInputType);
 }

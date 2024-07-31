@@ -58,4 +58,28 @@
       }
     }
   }
+  // Numbers only
+  &.numeric {
+    .keys {
+      .key-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(20px, 20%));
+        grid-gap: 10px;
+        justify-content: center;
+        margin-bottom: 10px;
+        .key {
+          height: 8vh;
+          max-height: 70px;
+          font-size: 32px;
+          // Backspace button
+          &[data-value="delete"] {
+            padding: 10px 5px;
+            svg {
+              max-height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
