@@ -7,6 +7,7 @@ let playerBarHeight = 100; // px (default)
 const drawerSlideTime = 200;
 const playerRemoveTime = 500;
 const playerMeterSlideTime = 500;
+const playerScoreAnimateTime = 300;
 
 
 

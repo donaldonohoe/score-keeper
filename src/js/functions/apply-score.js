@@ -20,11 +20,38 @@ const applyScoreToGameJSON = (player, score) => {
 }
 
 
+const animatePlayerBarScore = (playerBar, newScore) => {
+  // Ref: https://stackoverflow.com/questions/16994662/count-animation-from-number-a-to-b  
+  let scoreEl = playerBar.querySelector('.score-meter .current-score');
+  let oldScore = parseInt(scoreEl.innerHTML);
+  let range = newScore - oldScore;
+  let duration = playerScoreAnimateTime;
+  let minTimer = 50; // no timer shorter than 50ms (not really visible any way)
+  let stepTime = Math.abs(Math.floor(duration / range)); // calc step time to show all intermediate values
+  stepTime = Math.max(stepTime, minTimer); // never go below minTimer
+  let startTime = new Date().getTime(); // get current time and calculate desired end time
+  let endTime = startTime + duration;
+  let timer;
+  // Animate function
+  let run = () => {
+    let now = new Date().getTime();
+    let remaining = Math.max((endTime - now) / duration, 0);
+    let value = Math.round(newScore - (remaining * range));
+    scoreEl.innerHTML = value;
+    if (value == newScore) {
+      clearInterval(timer);
+    }
+  }
+  timer = setInterval(run, stepTime);
+  run();
+}
+
+
 const updatePlayerBar = (player) => {
   let playerBar = el_leaderboard.querySelector(`.player-bar[data-player-name="${player.name}"]`);
   playerBar.querySelector('.play-count').innerHTML = `(${player.play_count})`;
   playerBar.querySelector('.score-meter .bar').setAttribute('data-current-score', player.current_score);
-  playerBar.querySelector('.score-meter .current-score').innerHTML = player.current_score;
+  animatePlayerBarScore(playerBar, player.current_score);
 }
 
 
@@ -43,5 +70,5 @@ const applyScore = (score) => {
   setTimeout(() => {
     updateLeaderboard();
     updateGameStats();
-  }, drawerSlideTime);
+  }, drawerSlideTime + playerScoreAnimateTime);
 }
