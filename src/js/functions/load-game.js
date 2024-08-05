@@ -10,4 +10,5 @@ const loadGameFromStorage = (gameJSON) => {
   updateGameStats();
   // Apply settings from data load
   setPlayerOrderTypeButton();
+  setKeyboardInputTypeButton();
 }

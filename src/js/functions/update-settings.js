@@ -7,6 +7,14 @@ const setPlayerOrderTypeButton = () => {
   el_playerOrderTypeButton.setAttribute('data-selected', selectedIndex);
 }
 
+// Set keyboard input type button
+const setKeyboardInputTypeButton = () => {
+  let keyboardInputType = gameJSON.game_settings.keyboard_input_type;
+  let options = Array.from(el_keyboardInputTypeButton.querySelectorAll('span'));
+  let selectedIndex = options.findIndex(option => option.getAttribute('data-value') === keyboardInputType);
+  el_keyboardInputTypeButton.setAttribute('data-selected', selectedIndex);
+}
+
 // Update player order type
 const updatePlayerOrderType = () => {
   let selectedIndex = el_playerOrderTypeButton.getAttribute('data-selected');
