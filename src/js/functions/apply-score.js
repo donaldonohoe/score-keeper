@@ -40,9 +40,11 @@ const animatePlayerBarScore = (playerBar, newScore) => {
     scoreEl.innerHTML = value;
     if (value == newScore) {
       clearInterval(timer);
+      scoreEl.classList.remove('score-animating');
     }
   }
   timer = setInterval(run, stepTime);
+  scoreEl.classList.add('score-animating'); 
   run();
 }
 
@@ -51,6 +53,14 @@ const updatePlayerBar = (player) => {
   let playerBar = el_leaderboard.querySelector(`.player-bar[data-player-name="${player.name}"]`);
   playerBar.querySelector('.play-count').innerHTML = `(${player.play_count})`;
   playerBar.querySelector('.score-meter .bar').setAttribute('data-current-score', player.current_score);
+  // Temporarily change HTML to new score, measure it's width, reset HTML score, and apply padding ahead of animation
+  let scoreEl = playerBar.querySelector('.score-meter .current-score');
+  let oldScore = scoreEl.innerHTML;
+  scoreEl.innerHTML = player.current_score;
+  let scoreSpanWidth = scoreEl.offsetWidth;
+  playerBar.querySelector('.score-meter').style.paddingRight = `${scoreSpanWidth + 10}px`;
+  scoreEl.innerHTML = oldScore;
+  // Animate score to new value
   animatePlayerBarScore(playerBar, player.current_score);
 }
 
@@ -61,14 +71,14 @@ const applyScore = (score) => {
   let player = gameJSON.game_session.players.find(player => player.name == playerName);
   // Update player object
   applyScoreToGameJSON(player, score);
-  // Update player bar
-  updatePlayerBar(player);
   // Close drawer
   closeDrawer();
   el_playerScoreInput.value = ''; // Reset drawer input
-  // Update Leaderboard
   setTimeout(() => {
+    // Update player bar
+    updatePlayerBar(player);
+    // Update Leaderboard
     updateLeaderboard();
     updateGameStats();
-  }, drawerSlideTime + playerScoreAnimateTime);
+  }, drawerSlideTime);
 }

@@ -6,8 +6,8 @@ let playerBarHeight = 100; // px (default)
 // Transitions
 const drawerSlideTime = 200;
 const playerRemoveTime = 500;
-const playerMeterSlideTime = 500;
-const playerScoreAnimateTime = 300;
+const playerMeterSlideTime = 700; // to match CSS transition time
+const playerScoreAnimateTime = 700;
 
 
 

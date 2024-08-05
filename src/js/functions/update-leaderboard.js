@@ -18,8 +18,11 @@ const updateLeaderboard = () => {
   // Update all score bar meters relative to the highest score
   el_leaderboard.querySelectorAll('.player-bar').forEach((playerBar) => {
     let bar = playerBar.querySelector('.score-meter .bar');
+    let scoreEl = playerBar.querySelector('.score-meter .current-score');
     let score = bar.getAttribute('data-current-score');
-    playerBar.querySelector('.score-meter').style.paddingRight = `${scoreSpanMaxWidth + 10}px`;
+    if(!scoreEl.classList.contains('score-animating')) { // Exclude animating scores as element width is changing
+      playerBar.querySelector('.score-meter').style.paddingRight = `${scoreSpanMaxWidth + 10}px`;
+    }
     bar.style.width = score <= 0 ? 0 : `${(score/highestCurrentScore)*100}%`; // 0 width if minus score, else % of highest score
   });
 
