@@ -44,5 +44,7 @@ const openPlayerDrawer = (e) => {
   el_gameFrame.addEventListener('click', closeDrawerClickAway, true);
   document.addEventListener('keyup', closeDrawerEscKey, true);
   // Focus on input on drawer open
-  setTimeout(() => el_playerScoreInput.focus(), drawerSlideTime);
+  if(gameJSON.game_settings.keyboard_input_type == 'native') {
+    setTimeout(() => el_playerScoreInput.focus(), drawerSlideTime);
+  }
 }
