@@ -3,6 +3,9 @@
 const closeDrawer = () => {
   // Close active drawer(s)
   document.querySelectorAll('.drawer.active').forEach((drawer) => drawer.classList.remove('active'));
+  // Cancel focus on any drawer inputs
+  el_playerScoreInput.blur();
+  el_addPlayerInput.blur()
   // Disable event listeners when drawers are closed
   el_gameFrame.removeEventListener('click', closeDrawerClickAway, true);
   document.removeEventListener('keyup', closeDrawerEscKey, true);
