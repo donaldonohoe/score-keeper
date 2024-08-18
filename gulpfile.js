@@ -60,7 +60,7 @@ const jsCompile = [
           'elements.js'
         ],
         plugins : [
-          
+          'interact.min.js'
         ],
         components : [
           'buttons.js',
@@ -70,7 +70,7 @@ const jsCompile = [
           'handle-timestamp.js',
           'get-ordinal.js',
           'open-close-drawer.js',
-          'draggable.js',
+          'draggable2.js',
           'load-game.js',
           'update-leaderboard.js',
           'update-game-info.js',

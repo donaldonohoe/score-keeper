@@ -2,7 +2,7 @@
 // Close drawer function
 const closeDrawer = () => {
   // Close active drawer(s)
-  document.querySelectorAll('.drawer.active').forEach((drawer) => drawer.classList.remove('active'));
+  document.querySelectorAll('.drawer.active').forEach((drawer) => drawer.classList.remove('active', 'draggable'));
   // Cancel focus on any drawer inputs
   el_playerScoreInput.blur();
   el_addPlayerInput.blur()

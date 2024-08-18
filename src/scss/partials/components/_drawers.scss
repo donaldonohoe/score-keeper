@@ -157,6 +157,13 @@
       transform: translateY(0);
     }
   }
+  &.draggable {
+    touch-action: none;
+    transition: none;
+    .inner {
+      touch-action: none;
+    }
+  }
 } // .drawer
 
 
