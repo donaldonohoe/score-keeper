@@ -158,11 +158,8 @@
     }
   }
   &.draggable {
-    touch-action: none;
-    transition: none;
-    .inner {
-      touch-action: none;
-    }
+    touch-action: none; // Prevent default browser refresh on pull-down
+    transition: none; // Transition removed for smooth JS dragging event
   }
 } // .drawer
 

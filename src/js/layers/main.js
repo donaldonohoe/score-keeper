@@ -5,9 +5,8 @@ els_navButtons.forEach((button) => {
     // Open button's target drawer
     let drawer = document.getElementById(button.getAttribute('data-target-el'));
     drawer.classList.add('active');
-    setTimeout(() => {
-      drawer.classList.add('draggable');
-    }, drawerSlideTime);
+    // Make draggable
+    draggableDrawer(drawer);
     // Enable event listeners when drawer is open
     el_gameFrame.addEventListener('click', closeDrawerClickAway, true);
     document.addEventListener('keyup', closeDrawerEscKey, true);
