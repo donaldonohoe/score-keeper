@@ -1,16 +1,25 @@
 
 // Standard action button
 .action-button {
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   color: $app_black;
   background-color: $white;
   padding: 10px 15px;
   border-radius: 10px;
   transition: all 0.2s $ease;
-  &:hover {
-    background-color: $app_black_10;
+  // &:hover {
+  //   background-color: $app_black_10;
+  // }
+  &:active {
+    animation: buttonPress 0.2s $ease;
   }
+}
+
+@keyframes buttonPress {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(0.9); }
+  100% { transform: scale(1); }
 }
 
 // Segmented button (default 2 options)
@@ -18,9 +27,12 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  height: max-content;
   background-color: $app_black_80;
   border-radius: 10px;
-  transition: all 0.2s $ease;
+  overflow: hidden;
+  transition: all 0.15s $ease;
   &:before { // Switch
     content: '';
     position: absolute;
@@ -30,7 +42,8 @@
     height: 100%;
     background-color: $white;
     border-radius: 10px;
-    transition: all 0.2s $ease;
+    box-shadow: 0px 0px 20px $app_black;
+    transition: all 0.15s $ease;
   }
   span {
     position: relative;
@@ -39,11 +52,11 @@
     color: $white;
     padding: 10px;
     border-radius: 10px;
-    transition: all 0.2s $ease;
+    transition: all 0.15s $ease;
   }
-  &:hover {
-    background-color: $app_black_70;
-  }
+  // &:hover {
+  //   background-color: $app_black_70;
+  // }
   // Option 1 selected
   &[data-selected="0"] {
     &:before { // Switch
