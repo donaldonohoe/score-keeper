@@ -60,7 +60,7 @@ const jsCompile = [
           'elements.js'
         ],
         plugins : [
-          'interact.min.js'
+          //'interact.min.js'
         ],
         components : [
           'buttons.js',
