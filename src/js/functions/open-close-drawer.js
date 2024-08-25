@@ -40,6 +40,8 @@ const openPlayerDrawer = (e) => {
   updatePlayerStats(player);
   // Open drawer
   el_playerDrawer.classList.add('active');
+  // Make draggable
+  draggableDrawer(el_playerDrawer);
   // Enable event listeners when drawer is open
   el_gameFrame.addEventListener('click', closeDrawerClickAway, true);
   document.addEventListener('keyup', closeDrawerEscKey, true);
