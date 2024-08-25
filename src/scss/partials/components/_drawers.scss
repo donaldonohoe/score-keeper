@@ -87,7 +87,7 @@
       .stats {
         .stats-item {
           display: grid;
-          grid-template-columns: minmax(250px, max-content) auto;
+          grid-template-columns: minmax(200px, max-content) auto;
           grid-gap: 5px 20px;
           margin-bottom: 15px;
           .label {
