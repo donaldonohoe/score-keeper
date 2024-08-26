@@ -2,17 +2,27 @@
 // This function is for ".from-bottom" drawers only that can be pulled down to close
 const draggableDrawer = (drawer) => {
 
+  // Make drawer draggable once opened
+  setTimeout(() => drawer.classList.add('draggable'), drawerSlideTime);
+
   let startY, startTop, isDragging, targetInner = false;
   const drawerInner = drawer.querySelector('.inner');
 
-  setTimeout(() => drawer.classList.add('draggable'), drawerSlideTime);
+  // Function to get translateY value of element
+  const getTranslateY = (element) => {
+    const transform = window.getComputedStyle(element).transform;
+    if (transform === 'none') return 0;
+    const matrix = transform.match(/matrix\((.+)\)/);
+    return matrix ? parseFloat(matrix[1].split(', ')[5]) : 0;
+  }
 
   const handleTouchStart = (e) => {
     if(e.target.closest('.inner')) {
       targetInner = true;
     }
     startY = e.touches[0].pageY; // Capture the starting Y position of the touch
-    startTop = drawer.getBoundingClientRect().top; // Capture the initial drawer's transform translateY value
+    //startTop = drawer.getBoundingClientRect().top; // Capture the initial drawer's transform translateY value
+    startTop = getTranslateY(drawer);
     isDragging = false; // Reset dragging state
   }
 
@@ -39,7 +49,8 @@ const draggableDrawer = (drawer) => {
 
   const handleTouchEnd = (e) => {
     if (isDragging) {
-      if (drawer.getBoundingClientRect().top > 100) { // Close drawer if dragged past threshold
+      //if (drawer.getBoundingClientRect().top > 100) { // Close drawer if dragged past threshold
+      if (getTranslateY(drawer) > drawerPullThreshold) { // Close drawer if dragged past threshold
         drawer.removeAttribute('style');
         drawer.classList.remove('active', 'draggable');
       } else { // Snap back to the open position
