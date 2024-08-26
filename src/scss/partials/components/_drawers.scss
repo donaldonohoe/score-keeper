@@ -66,6 +66,9 @@
           width: 40px;
           height: 40px;
           border-radius: 10px;
+          &:active {
+            animation: buttonPress 0.2s $ease;
+          }
         }
         &[data-input-type="on-screen"] {
           input {
@@ -163,8 +166,13 @@
 
 // Add Player drawer
 #add-player-drawer {
+  height: 60%;
   .inner {
-    padding-top: 60px;
+    //padding-top: 60px;
+    //align-self: end;
+    .drawer-section {
+      margin-bottom: 0;
+    }
   }
 } // #add-player-drawer
 
@@ -263,6 +271,19 @@
 body[data-touch="false"] {
 
   .drawer {
+    .inner {
+      .drawer-section {
+        // Inputs
+        .input-block {
+          button {
+            transition: background-color 0.2s $ease;
+            &:hover {
+              background-color: $app_black_10;
+            }
+          }
+        }
+      }
+    }
     .close-button {
       &:hover {
         background-color: $app_black_70;
