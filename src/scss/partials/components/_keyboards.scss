@@ -16,9 +16,6 @@
       user-select: none; // Prevent natively selecting character on touch screens
       -webkit-user-select: none; /* Safari */
       touch-action: manipulation; // Prevent double-tap zoom in on touch screens
-      &:hover {
-        background-color: $app_black_60;
-      }
       &:active {
         background-color: $app_black_40;
         transition: none;
@@ -83,3 +80,22 @@
     }
   }
 }
+
+
+
+
+
+// Enable hover effects for non-touch devices
+body[data-touch="false"] {
+
+  .on-screen-keyboard {
+    .keys {
+      .key {
+        &:hover {
+          background-color: $app_black_60;
+        }
+      }
+    }
+  }
+
+} // non-touch

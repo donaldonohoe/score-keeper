@@ -145,9 +145,6 @@
       border-right: 2px solid $white;
       transform: translateY(-20%) rotate(45deg);
     }
-    &:hover {
-      background-color: $app_black_70;
-    }
   }
   &.from-bottom {
     border-top-left-radius: $drawer_border_radius;
@@ -187,9 +184,6 @@
       border-radius: 10px;
       margin: 20px;
       transition: all 0.2s $ease;
-      &:hover {
-        text-underline-offset: 8px;
-      }
     }
   }
 } // #add-player-drawer
@@ -259,3 +253,32 @@
     }
   }
 } // #settings-drawer
+
+
+
+
+
+
+// Enable hover effects for non-touch devices
+body[data-touch="false"] {
+
+  .drawer {
+    .close-button {
+      &:hover {
+        background-color: $app_black_70;
+      }
+    } 
+  } // .drawer
+
+  // Player drawer
+#player-drawer {
+  .drawer-footer {
+    #remove-player-button {
+      &:hover {
+        text-underline-offset: 8px;
+      }
+    }
+  }
+} // #add-player-drawer
+
+} // non-touch

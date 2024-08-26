@@ -13,9 +13,6 @@
     text-transform: uppercase;
     color: $white;
     padding: 10px;
-    &:hover {
-      background-color: $app_black_90;
-    }
     &:active {
       background-color: $app_black_80;
     }
@@ -30,3 +27,20 @@
     background: linear-gradient(to top, $app_black, transparent);
   }
 }
+
+
+
+
+
+// Enable hover effects for non-touch devices
+body[data-touch="false"] {
+
+  #game-nav {
+    button {
+      &:hover {
+        background-color: $app_black_90;
+      }
+    }
+  }
+
+} // non-touch

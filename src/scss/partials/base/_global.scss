@@ -69,9 +69,6 @@ a {
   cursor: pointer;
   color: $white;
   text-decoration: underline;
-  &:hover {
-    text-decoration: underline;
-  }
 }
 ul, ol {
 	//@include font-size($p_text_size);
@@ -93,6 +90,20 @@ button {
 	cursor: pointer;
 }
 
+
+
+
+
+// Enable hover effects for non-touch devices
+body[data-touch="false"] {
+
+  a {
+		&:hover {
+		  text-decoration: underline;
+		}
+	}
+
+} // non-touch
 
 
 

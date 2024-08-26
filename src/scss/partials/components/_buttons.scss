@@ -8,9 +8,6 @@
   padding: 10px 15px;
   border-radius: 10px;
   transition: all 0.2s $ease;
-  // &:hover {
-  //   background-color: $app_black_10;
-  // }
   &:active {
     animation: buttonPress 0.2s $ease;
   }
@@ -54,9 +51,6 @@
     border-radius: 10px;
     transition: all 0.15s $ease;
   }
-  // &:hover {
-  //   background-color: $app_black_70;
-  // }
   // Option 1 selected
   &[data-selected="0"] {
     &:before { // Switch
@@ -80,3 +74,25 @@
     }
   }
 }
+
+
+
+
+// Enable hover effects for non-touch devices
+body[data-touch="false"] {
+
+  // Standard action button
+  .action-button {
+    &:hover {
+      background-color: $app_black_10;
+    }
+  }
+
+  // Segmented button (default 2 options)
+  .segmented-button {
+    &:hover {
+      background-color: $app_black_70;
+    }
+  }
+
+} // non-touch

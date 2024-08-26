@@ -89,11 +89,6 @@
       }
     }
   }
-  &:hover {
-    .inner {
-      background-color: rgba($app_black_80, 0.8);
-    }
-  }
   &.remove {
     .inner {
       transform: scale(0.9);
@@ -101,4 +96,24 @@
       transition: all 0.5s $ease;
     }
   }
+  &:active {
+    background-color: $app_black_40;
+    transition: none;
+  }
 } // .player-bar
+
+
+
+
+// Enable hover effects for non-touch devices
+body[data-touch="false"] {
+
+  .player-bar {
+    &:hover {
+      .inner {
+        background-color: rgba($app_black_80, 0.8);
+      }
+    }
+  } // .player-bar
+
+} // non-touch
