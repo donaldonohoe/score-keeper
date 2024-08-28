@@ -10,9 +10,21 @@
   display: grid;
   grid-template-rows: min-content auto min-content;
   .drawer-header {
+    position: relative;
+    color: $app_black_30;
     text-transform: uppercase;
-    text-align: center;
-    padding: 20px;
+    //text-align: center;
+    padding: 30px 15px 20px 15px;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 5px;
+      top: 10px;
+      left: calc(50% - 25px);
+      background-color: $app_black_70;
+      border-radius: 5px;
+    }
   }
   .inner {
     padding: 30px 15px;
@@ -130,10 +142,10 @@
   }
   .close-button {
     position: absolute;
-    top: 10px;
+    top: 23px;
     right: 10px;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     background-color: $app_black_80;
     border-radius: 50%;
     transition: background-color 0.2s $ease;
@@ -144,8 +156,8 @@
       left: 30%;
       width: 40%;
       height: 40%;
-      border-bottom: 2px solid $white;
-      border-right: 2px solid $white;
+      border-bottom: 2px solid $app_black_30;
+      border-right: 2px solid $app_black_30;
       transform: translateY(-20%) rotate(45deg);
     }
   }
@@ -267,10 +279,16 @@
 
 
 
-// Enable hover effects for non-touch devices
+// Non-touch devices
 body[data-touch="false"] {
 
   .drawer {
+    .drawer-header {
+      padding: 20px 15px;
+      &:before {
+        display: none;
+      }
+    }
     .inner {
       .drawer-section {
         // Inputs
@@ -285,6 +303,7 @@ body[data-touch="false"] {
       }
     }
     .close-button {
+      top: 13px;
       &:hover {
         background-color: $app_black_70;
       }
