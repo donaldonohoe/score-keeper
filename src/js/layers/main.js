@@ -5,6 +5,7 @@ els_navButtons.forEach((button) => {
     // Open button's target drawer
     let drawer = document.getElementById(button.getAttribute('data-target-el'));
     drawer.classList.add('active');
+    el_drawerScrim.classList.add('active');
     // Make draggable
     draggableDrawer(drawer);
     // Enable event listeners when drawer is open

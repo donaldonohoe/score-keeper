@@ -3,6 +3,7 @@
 const closeDrawer = () => {
   // Close active drawer(s)
   document.querySelectorAll('.drawer.active').forEach((drawer) => drawer.classList.remove('active', 'draggable'));
+  el_drawerScrim.classList.remove('active');
   // Cancel focus on any drawer inputs
   el_playerScoreInput.blur();
   el_addPlayerInput.blur()
@@ -40,6 +41,7 @@ const openPlayerDrawer = (e) => {
   updatePlayerStats(player);
   // Open drawer
   el_playerDrawer.classList.add('active');
+  el_drawerScrim.classList.add('active');
   // Make draggable
   draggableDrawer(el_playerDrawer);
   // Enable event listeners when drawer is open

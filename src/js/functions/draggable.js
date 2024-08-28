@@ -52,7 +52,7 @@ const draggableDrawer = (drawer) => {
       //if (drawer.getBoundingClientRect().top > 100) { // Close drawer if dragged past threshold
       if (getTranslateY(drawer) > drawerPullThreshold) { // Close drawer if dragged past threshold
         drawer.removeAttribute('style');
-        drawer.classList.remove('active', 'draggable');
+        closeDrawer();
       } else { // Snap back to the open position
         drawer.classList.remove('draggable');
         drawer.style.webkitTransform = drawer.style.transform = 'translateY(' + 0 + 'px)';
