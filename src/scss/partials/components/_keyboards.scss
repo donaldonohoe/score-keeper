@@ -20,6 +20,13 @@
         background-color: $app_black_40;
         transition: none;
       }
+      // Backspace button
+      &[data-value="delete"] {
+        background-image: url($icon_backspace_light);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 50%;
+      }
     }
   }
   // Letters only
@@ -38,9 +45,6 @@
           &[data-value="delete"] {
             width: 150%;
             padding: 10px 5px;
-            svg {
-              max-height: 30px;
-            }
           }
         }
         &:nth-of-type(1) {
@@ -71,9 +75,7 @@
           // Backspace button
           &[data-value="delete"] {
             padding: 10px 5px;
-            svg {
-              max-height: 30px;
-            }
+            background-size: 40%;
           }
         }
       }
