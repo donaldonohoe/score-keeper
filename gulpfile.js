@@ -28,6 +28,15 @@ function pipeHTML() {
 }
 
 
+// IMG
+function images() {
+  return gulp
+    .src(['src/img/**/*.{png,jpg,jpeg,gif,svg}'])
+    .pipe(gulp.dest('test/img/'))
+    .pipe(gulp.dest('dist/img/'))
+}
+
+
 
 // SCSS
 function scss(cb) {
@@ -133,16 +142,18 @@ function watch(cb) {
   gulp.watch('src/**/*.html', gulp.series(pipeHTML));
   gulp.watch('src/scss/**/*.scss', gulp.series(scss));
   gulp.watch('src/js/**/*.js', gulp.series(scripts));
+  gulp.watch('src/img/**/*.{png,jpg,jpeg,gif,svg}', gulp.series(images));
   cb();
 }
 
 /* GLOBAL BUILD FUNCTION */
-const build = gulp.series(pipeHTML, scss, scripts);
+const build = gulp.series(pipeHTML, scss, scripts, images);
 
 // Export the build tasks to run via the command line
 exports.build = build;
 exports.buildHTML = pipeHTML;
 exports.buildCSS = scss;
 exports.buildJS = scripts;
+exports.buildIMG = images;
 
 module.default = gulp.task('default', gulp.series(watch));
