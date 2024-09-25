@@ -4,3 +4,20 @@
   50%  { transform: scale(0.9); }
   100% { transform: scale(1); }
 }
+
+@keyframes gridVoltUp {
+  0%   { top: 100%; }
+  100% { top: 0; }
+}
+@keyframes gridVoltDown {
+  0%   { top: 0; }
+  100% { top: 100%; }
+}
+@keyframes gridVoltLeft {
+  0%   { left: 100%; }
+  100% { left: 0; }
+}
+@keyframes gridVoltRight {
+  0%   { left: 0; }
+  100% { left: 100%; }
+}
