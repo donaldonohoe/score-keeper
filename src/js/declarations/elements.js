@@ -3,10 +3,9 @@
 const els_segmentedButtons = document.querySelectorAll('.segmented-button');
 const els_onScreenKeyboards = document.querySelectorAll('.on-screen-keyboard');
 
-// Game frame
+// Main
 const el_main = document.querySelector('main');
 const el_background = document.getElementById('background');
-const el_gameFrame = document.getElementById('game-frame');
 
 // Leaderboard
 const el_leaderboard = document.getElementById('leaderboard');

@@ -33,172 +33,168 @@
       </div>
     </div>
 
-    <div id="game-frame">
+    <section id="leaderboard">
+      <div id="player-bars"></div>
+    </section>
 
-      <section id="leaderboard">
-        <div id="player-bars"></div>
-      </section>
+    <!-- Bottom nav -->
+    <nav id="game-nav">
+      <button id="settings-button" data-target-el="settings-drawer">Options</button>
+      <button id="add-player-button" data-target-el="add-player-drawer">Add player</button>
+      <button id="game-info-button" data-target-el="game-info-drawer">Game info</button>
+    </nav>
 
-      <!-- Bottom nav -->
-      <nav id="game-nav">
-        <button id="settings-button" data-target-el="settings-drawer">Options</button>
-        <button id="add-player-button" data-target-el="add-player-drawer">Add player</button>
-        <button id="game-info-button" data-target-el="game-info-drawer">Game info</button>
-      </nav>
+    <!-- Drawer scrim -->
+    <div id="drawer-scrim"></div>
 
-      <!-- Drawer scrim -->
-      <div id="drawer-scrim"></div>
-
-      <!-- Add Player drawer -->
-      <aside id="add-player-drawer" class="drawer from-bottom">
-        <h2 class="drawer-header">Add Player</h2>
-        <div class="inner">
-          <div class="drawer-section">
-            <div class="input-block" data-input-type="on-screen">
-              <input id="add-player-input" type="text" autocomplete="off" placeholder="Enter name">
-              <button id="add-player-submit">+</button>
-            </div>
-            <div class="on-screen-keyboard alpha">
-              <div class="keys">
-                <div class="key-row">
-                  <button class="key" data-value="q">q</button>
-                  <button class="key" data-value="w">w</button>
-                  <button class="key" data-value="e">e</button>
-                  <button class="key" data-value="r">r</button>
-                  <button class="key" data-value="t">t</button>
-                  <button class="key" data-value="y">y</button>
-                  <button class="key" data-value="u">u</button>
-                  <button class="key" data-value="i">i</button>
-                  <button class="key" data-value="o">o</button>
-                  <button class="key" data-value="p">p</button>
-                </div>
-                <div class="key-row">
-                  <button class="key" data-value="a">a</button>
-                  <button class="key" data-value="s">s</button>
-                  <button class="key" data-value="d">d</button>
-                  <button class="key" data-value="f">f</button>
-                  <button class="key" data-value="g">g</button>
-                  <button class="key" data-value="h">h</button>
-                  <button class="key" data-value="j">j</button>
-                  <button class="key" data-value="k">k</button>
-                  <button class="key" data-value="l">l</button>
-                </div>
-                <div class="key-row">
-                  <button class="key" data-value="z">z</button>
-                  <button class="key" data-value="x">x</button>
-                  <button class="key" data-value="c">c</button>
-                  <button class="key" data-value="v">v</button>
-                  <button class="key" data-value="b">b</button>
-                  <button class="key" data-value="n">n</button>
-                  <button class="key" data-value="m">m</button>
-                  <button class="key" data-value="delete"></button>
-                </div>
+    <!-- Add Player drawer -->
+    <aside id="add-player-drawer" class="drawer from-bottom">
+      <h2 class="drawer-header">Add Player</h2>
+      <div class="inner">
+        <div class="drawer-section">
+          <div class="input-block" data-input-type="on-screen">
+            <input id="add-player-input" type="text" autocomplete="off" placeholder="Enter name">
+            <button id="add-player-submit">+</button>
+          </div>
+          <div class="on-screen-keyboard alpha">
+            <div class="keys">
+              <div class="key-row">
+                <button class="key" data-value="q">q</button>
+                <button class="key" data-value="w">w</button>
+                <button class="key" data-value="e">e</button>
+                <button class="key" data-value="r">r</button>
+                <button class="key" data-value="t">t</button>
+                <button class="key" data-value="y">y</button>
+                <button class="key" data-value="u">u</button>
+                <button class="key" data-value="i">i</button>
+                <button class="key" data-value="o">o</button>
+                <button class="key" data-value="p">p</button>
+              </div>
+              <div class="key-row">
+                <button class="key" data-value="a">a</button>
+                <button class="key" data-value="s">s</button>
+                <button class="key" data-value="d">d</button>
+                <button class="key" data-value="f">f</button>
+                <button class="key" data-value="g">g</button>
+                <button class="key" data-value="h">h</button>
+                <button class="key" data-value="j">j</button>
+                <button class="key" data-value="k">k</button>
+                <button class="key" data-value="l">l</button>
+              </div>
+              <div class="key-row">
+                <button class="key" data-value="z">z</button>
+                <button class="key" data-value="x">x</button>
+                <button class="key" data-value="c">c</button>
+                <button class="key" data-value="v">v</button>
+                <button class="key" data-value="b">b</button>
+                <button class="key" data-value="n">n</button>
+                <button class="key" data-value="m">m</button>
+                <button class="key" data-value="delete"></button>
               </div>
             </div>
           </div>
-          <!-- <div class="drawer-section">
-            <div id="add-player-chips"></div>
-          </div> -->
         </div>
-        <button class="close-button"></button>
-      </aside>
+        <!-- <div class="drawer-section">
+          <div id="add-player-chips"></div>
+        </div> -->
+      </div>
+      <button class="close-button"></button>
+    </aside>
 
-      <!-- Player drawer -->
-      <aside id="player-drawer" class="drawer from-bottom">
-        <h2 class="drawer-header">Player</h2>
-        <div class="inner">
-          <div class="drawer-section">
-            <div class="input-block" data-input-type="on-screen">
-              <input id="player-score-input" type="text" autocomplete="off" placeholder="Add score">
-              <button id="player-score-submit">+</button>
-            </div>
-            <div class="on-screen-keyboard numeric">
-              <div class="keys">
-                <div class="key-row">
-                  <button class="key" data-value="7">7</button>
-                  <button class="key" data-value="8">8</button>
-                  <button class="key" data-value="9">9</button>
-                </div>
-                <div class="key-row">
-                  <button class="key" data-value="4">4</button>
-                  <button class="key" data-value="5">5</button>
-                  <button class="key" data-value="6">6</button>
-                </div>
-                <div class="key-row">
-                  <button class="key" data-value="1">1</button>
-                  <button class="key" data-value="2">2</button>
-                  <button class="key" data-value="3">3</button>
-                </div>
-                <div class="key-row">
-                  <button class="key" data-value=".">.</button>
-                  <button class="key" data-value="0">0</button>
-                  <button class="key" data-value="delete"></button>
-                </div>
+    <!-- Player drawer -->
+    <aside id="player-drawer" class="drawer from-bottom">
+      <h2 class="drawer-header">Player</h2>
+      <div class="inner">
+        <div class="drawer-section">
+          <div class="input-block" data-input-type="on-screen">
+            <input id="player-score-input" type="text" autocomplete="off" placeholder="Add score">
+            <button id="player-score-submit">+</button>
+          </div>
+          <div class="on-screen-keyboard numeric">
+            <div class="keys">
+              <div class="key-row">
+                <button class="key" data-value="7">7</button>
+                <button class="key" data-value="8">8</button>
+                <button class="key" data-value="9">9</button>
+              </div>
+              <div class="key-row">
+                <button class="key" data-value="4">4</button>
+                <button class="key" data-value="5">5</button>
+                <button class="key" data-value="6">6</button>
+              </div>
+              <div class="key-row">
+                <button class="key" data-value="1">1</button>
+                <button class="key" data-value="2">2</button>
+                <button class="key" data-value="3">3</button>
+              </div>
+              <div class="key-row">
+                <button class="key" data-value=".">.</button>
+                <button class="key" data-value="0">0</button>
+                <button class="key" data-value="delete"></button>
               </div>
             </div>
-          </div> 
-          <div class="drawer-section">
-            <h3 class="drawer-section-heading">Player Stats</h3>
-            <div id="player-stats" class="stats"></div>
           </div>
+        </div> 
+        <div class="drawer-section">
+          <h3 class="drawer-section-heading">Player Stats</h3>
+          <div id="player-stats" class="stats"></div>
         </div>
-        <div class="drawer-footer">
-          <button id="remove-player-button">Remove player</button>
-        </div>
-        <button class="close-button"></button>
-      </aside>
+      </div>
+      <div class="drawer-footer">
+        <button id="remove-player-button">Remove player</button>
+      </div>
+      <button class="close-button"></button>
+    </aside>
 
-      <!-- Settings drawer -->
-      <aside id="settings-drawer" class="drawer from-bottom">
-        <h2 class="drawer-header">Options</h2>
-        <div class="inner">
-          <div class="settings-item">
-            <h3 class="label">Restart game</h3>
-            <button id="restart-game-button" class="action-button action">Restart</button>
-            <p class="description">Start a new game with the same players</p>
-          </div>
-          <div class="settings-item">
-            <h3 class="label">New game</h3>
-            <button id="new-game-button" class="action-button action">New game</button>
-            <p class="description">Start a brand new</p>
-          </div>
-          <div class="settings-item">
-            <h3 class="label">Player order</h3>
-            <button id="player-order-type-button" class="segmented-button action" data-selected="0">
-              <span data-value="score">Score</span>
-              <span data-value="created">Created</span>
-            </button>
-            <p class="description">How players are listed</p>
-          </div>
-          <div class="settings-item">
-            <h3 class="label">Keyboard</h3>
-            <button id="keyboard-input-type-button" class="segmented-button action" data-selected="0">
-              <span data-value="on-screen">On-screen</span>
-              <span data-value="native">Native</span>
-            </button>
-            <p class="description">How names and scores are entered</p>
-          </div>
+    <!-- Settings drawer -->
+    <aside id="settings-drawer" class="drawer from-bottom">
+      <h2 class="drawer-header">Options</h2>
+      <div class="inner">
+        <div class="settings-item">
+          <h3 class="label">Restart game</h3>
+          <button id="restart-game-button" class="action-button action">Restart</button>
+          <p class="description">Start a new game with the same players</p>
         </div>
-        <button class="close-button"></button>
-      </aside>
-
-      <!-- Game Info drawer -->
-      <aside id="game-info-drawer" class="drawer from-bottom">
-        <h2 class="drawer-header">Game Info</h2>
-        <div class="inner">
-          <div class="drawer-section">
-            <h3 class="drawer-section-heading">Game Stats</h3>
-            <div id="game-info-stats" class="stats"></div>
-          </div>
-          <div class="drawer-section">
-            <h3 class="drawer-section-heading">Game History</h3>
-            <div id="game-info-history"></div>
-          </div>
+        <div class="settings-item">
+          <h3 class="label">New game</h3>
+          <button id="new-game-button" class="action-button action">New game</button>
+          <p class="description">Start a brand new</p>
         </div>
-        <button class="close-button"></button>
-      </aside>
+        <div class="settings-item">
+          <h3 class="label">Player order</h3>
+          <button id="player-order-type-button" class="segmented-button action" data-selected="0">
+            <span data-value="score">Score</span>
+            <span data-value="created">Created</span>
+          </button>
+          <p class="description">How players are listed</p>
+        </div>
+        <div class="settings-item">
+          <h3 class="label">Keyboard</h3>
+          <button id="keyboard-input-type-button" class="segmented-button action" data-selected="0">
+            <span data-value="on-screen">On-screen</span>
+            <span data-value="native">Native</span>
+          </button>
+          <p class="description">How names and scores are entered</p>
+        </div>
+      </div>
+      <button class="close-button"></button>
+    </aside>
 
-    </div>
+    <!-- Game Info drawer -->
+    <aside id="game-info-drawer" class="drawer from-bottom">
+      <h2 class="drawer-header">Game Info</h2>
+      <div class="inner">
+        <div class="drawer-section">
+          <h3 class="drawer-section-heading">Game Stats</h3>
+          <div id="game-info-stats" class="stats"></div>
+        </div>
+        <div class="drawer-section">
+          <h3 class="drawer-section-heading">Game History</h3>
+          <div id="game-info-history"></div>
+        </div>
+      </div>
+      <button class="close-button"></button>
+    </aside>
 
   </main>
     

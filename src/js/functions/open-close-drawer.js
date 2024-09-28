@@ -8,7 +8,7 @@ const closeDrawer = () => {
   el_playerScoreInput.blur();
   el_addPlayerInput.blur()
   // Disable event listeners when drawers are closed
-  el_gameFrame.removeEventListener('click', closeDrawerClickAway, true);
+  el_main.removeEventListener('click', closeDrawerClickAway, true);
   document.removeEventListener('keyup', closeDrawerEscKey, true);
 }
 
@@ -45,7 +45,7 @@ const openPlayerDrawer = (e) => {
   // Make draggable
   draggableDrawer(el_playerDrawer);
   // Enable event listeners when drawer is open
-  el_gameFrame.addEventListener('click', closeDrawerClickAway, true);
+  el_main.addEventListener('click', closeDrawerClickAway, true);
   document.addEventListener('keyup', closeDrawerEscKey, true);
   // Focus on input on drawer open
   if(gameJSON.game_settings.keyboard_input_type == 'native') {

@@ -1,4 +1,9 @@
 
+// Fit on resize
+window.addEventListener("resize", () => el_main.style.height = `${window.innerHeight}px`);
+
+
+
 // Click nav buttons
 els_navButtons.forEach((button) => {
   button.addEventListener('click', (e) => {
@@ -9,11 +14,10 @@ els_navButtons.forEach((button) => {
     // Make draggable
     draggableDrawer(drawer);
     // Enable event listeners when drawer is open
-    el_gameFrame.addEventListener('click', closeDrawerClickAway, true);
+    el_main.addEventListener('click', closeDrawerClickAway, true);
     document.addEventListener('keyup', closeDrawerEscKey, true);
   });
 });
-
 
 
 
