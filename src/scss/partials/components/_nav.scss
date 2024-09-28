@@ -1,20 +1,53 @@
 
 #game-nav {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 15px;
+  padding: 10px 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(50px, 110px));
+  //grid-template-columns: repeat(3, 1fr);
+  //gap: 10px;
+  justify-content: space-evenly;
+  align-items: start;
   button {
     position: relative;
-    font-size: 18px;
+    font-size: 14px;
     text-transform: uppercase;
     color: $white;
     padding: 10px;
+    border-radius: 10px;
+    &:before {
+      content: '';
+      position: relative;
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin: 0 auto;
+      margin-bottom: 5px;
+      background-image: url($icon_backspace_light);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
     &:active {
       background-color: $app_black_80;
+    }
+    &#settings-button {
+      &:before {
+        background-image: url($icon_filter_light);
+      }
+    }
+    &#add-player-button {
+      &:before {
+        background-image: url($icon_add_light);
+      }
+    }
+    &#game-info-button {
+      &:before {
+        background-image: url($icon_info_light);
+      }
     }
   }
   &:before {
