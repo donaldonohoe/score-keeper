@@ -47,9 +47,8 @@ const fireVolt = () => {
 }
 
 const scheduleRandomVolt = () => {
-  // Check settings for background effect
-  let maxDelay = 10000; // ms
-  let randomDelay = Math.floor(Math.random() * maxDelay);
+  // Check settings for background effect...
+  let randomDelay = Math.floor(Math.random() * backgroundVoltMaxDelay);
   setTimeout(() => {
     fireVolt();
   }, randomDelay);
