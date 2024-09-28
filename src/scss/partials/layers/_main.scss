@@ -97,8 +97,8 @@ main {
   width: 100%;
   height: 100%;
   padding: 15px;
-  // overflow: auto; // allow scroll if players exceed height
-  // padding-bottom: $player_bar_height;
+  overflow: auto; // allow scroll if players exceed height
+  padding-bottom: $player_bar_height;
   #player-bars {
     position: relative;
     width: 100%;

@@ -18,7 +18,7 @@
     color: $white;
     padding: 10px;
     border-radius: 10px;
-    &:before {
+    &:before { // Nav icon
       content: '';
       position: relative;
       display: block;
@@ -50,14 +50,15 @@
       }
     }
   }
-  &:before {
+  &:before { // Background gradient
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: $player_bar_height;
-    background: linear-gradient(to top, $app_black, transparent);
+    height: 120px;
+    background: linear-gradient(to top, rgba($app_black, 0.9) 50%, transparent);
+    pointer-events: none;
   }
 }
 
