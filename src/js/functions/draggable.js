@@ -58,6 +58,7 @@ const draggableDrawer = (drawer) => {
         drawer.style.webkitTransform = drawer.style.transform = 'translateY(' + 0 + 'px)';
         setTimeout(() => {
           drawer.classList.add('draggable');
+          drawer.removeAttribute('style');
         }, drawerSlideTime);
       }
     }
