@@ -253,20 +253,6 @@
       }
     }
   }
-  .drawer-nav {
-    button {
-      &#game-info-stats-button {
-        &:before {
-          background-image: url($icon_stats_light);
-        }
-      }
-      &#game-info-history-button {
-        &:before {
-          background-image: url($icon_list_light);
-        }
-      }
-    }
-  }
 } // #game-info-drawer
 
 

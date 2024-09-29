@@ -17,35 +17,23 @@ nav {
     color: $white;
     padding: 10px;
     border-radius: 10px;
-    &:before { // Nav icon
-      content: '';
+    svg { // Nav icon
       position: relative;
       display: block;
       width: 30px;
       height: 30px;
       margin: 0 auto;
       margin-bottom: 5px;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
+      stroke: $white;
+    }
+    &.active {
+      color: $app_accent_orange;
+      svg {
+        stroke: $app_accent_orange;
+      }
     }
     &:active {
       background-color: $app_black_80;
-    }
-    &#settings-button {
-      &:before {
-        background-image: url($icon_filter_light);
-      }
-    }
-    &#add-player-button {
-      &:before {
-        background-image: url($icon_add_light);
-      }
-    }
-    &#game-info-button {
-      &:before {
-        background-image: url($icon_info_light);
-      }
     }
   }
   &:before { // Background gradient
@@ -63,23 +51,6 @@ nav {
 #game-nav {
   position: fixed;
   grid-template-columns: repeat(auto-fit, minmax(50px, 110px));
-  button {
-    &#settings-button {
-      &:before {
-        background-image: url($icon_filter_light);
-      }
-    }
-    &#add-player-button {
-      &:before {
-        background-image: url($icon_add_light);
-      }
-    }
-    &#game-info-button {
-      &:before {
-        background-image: url($icon_info_light);
-      }
-    }
-  }
 } // #game-nav
 
 
