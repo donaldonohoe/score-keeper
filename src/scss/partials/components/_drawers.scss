@@ -137,6 +137,12 @@
       }
     }
   }
+  .drawer-nav {
+    grid-template-columns: repeat(auto-fit, minmax(50px, 130px));
+    &:before { // Background gradient
+      background: linear-gradient(to top, rgba($app_black_90, 0.9) 50%, transparent);
+    }
+  }
   .drawer-footer {
 
   }
@@ -192,19 +198,23 @@
 
 // Player drawer
 #player-drawer {
-  .drawer-footer {
-    justify-self: center;
-    #remove-player-button {
-      font-size: 14px;
-      text-transform: uppercase;
-      text-decoration: underline;
-      text-underline-offset: 5px;
-      line-height: 1;
-      color: $white;
-      padding: 10px;
-      border-radius: 10px;
-      margin: 20px;
-      transition: all 0.2s $ease;
+  .drawer-nav {
+    button {
+      &#player-add-score-button {
+        &:before {
+          background-image: url($icon_add_light);
+        }
+      }
+      &#player-stats-button {
+        &:before {
+          background-image: url($icon_stats_light);
+        }
+      }
+      &#player-remove-button {
+        &:before {
+          background-image: url($icon_backspace_light);
+        }
+      }
     }
   }
 } // #add-player-drawer
@@ -239,6 +249,20 @@
       #game-info-stats {
         .stats-item {
 
+        }
+      }
+    }
+  }
+  .drawer-nav {
+    button {
+      &#game-info-stats-button {
+        &:before {
+          background-image: url($icon_stats_light);
+        }
+      }
+      &#game-info-history-button {
+        &:before {
+          background-image: url($icon_list_light);
         }
       }
     }
