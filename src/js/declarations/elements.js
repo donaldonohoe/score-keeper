@@ -22,6 +22,7 @@ const el_gameInfoButton = document.getElementById('game-info-button');
 const els_drawers = document.querySelectorAll('.drawer');
 const el_drawerScrim = document.getElementById('drawer-scrim');
 const els_close_drawer_buttons = document.querySelectorAll('.drawer .close-button');
+const els_drawer_nav_buttons = document.querySelectorAll('.drawer .drawer-nav button');
 
 // Add player drawer
 const el_addPlayerDrawer = document.getElementById('add-player-drawer');

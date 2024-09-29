@@ -4,7 +4,7 @@ window.addEventListener("resize", () => el_main.style.height = `${window.innerHe
 
 
 
-// Click nav buttons
+// Click main nav buttons
 els_navButtons.forEach((button) => {
   button.addEventListener('click', (e) => {
     // Open button's target drawer

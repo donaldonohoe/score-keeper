@@ -6,7 +6,6 @@ const draggableDrawer = (drawer) => {
   setTimeout(() => drawer.classList.add('draggable'), drawerSlideTime);
 
   let startY, startTop, isDragging, targetInner = false;
-  const drawerInner = drawer.querySelector('.inner');
 
   // Function to get translateY value of element
   const getTranslateY = (element) => {
@@ -29,7 +28,7 @@ const draggableDrawer = (drawer) => {
   const handleTouchMove = (e) => {
     const movingY = e.touches[0].pageY;
     const diffY = movingY - startY;
-    const isAtTop = drawerInner.scrollTop === 0;
+    const isAtTop = e.target.closest('.drawer-section') && e.target.closest('.drawer-section').scrollTop === 0
     const dragDrawer = () => {
       isDragging = true;
       const newTranslateY = Math.min(startTop + diffY, window.innerHeight);
