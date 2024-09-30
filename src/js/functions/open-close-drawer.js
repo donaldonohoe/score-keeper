@@ -40,7 +40,7 @@ const openPlayerDrawer = (e) => {
   let player = gameJSON.game_session.players.find(player => player.name == playerName); // Player object
   // Populate drawer with player data
   el_playerDrawer.setAttribute('data-player-name', player.name);
-  el_playerDrawer.querySelector('.drawer-header').innerHTML = player.name;
+  el_playerDrawer.querySelector('.drawer-header h2').innerHTML = player.name;
   updatePlayerStats(player);
   // Open drawer
   el_playerDrawer.classList.add('active');
