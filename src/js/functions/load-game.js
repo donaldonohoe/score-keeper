@@ -1,7 +1,10 @@
 
 const loadGameFromStorage = (gameJSON) => {
   // Create player bar for each player
-  gameJSON.game_session.players.forEach((player) => createPlayerBar(player));
+  gameJSON.game_session.players.forEach((player) => {
+    createPlayerBar(player);
+    updatePlayerBar(player);
+  });
   // Set leaderboard from data load
   updateLeaderboard();
   // Create game history

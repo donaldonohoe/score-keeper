@@ -8,21 +8,20 @@ const updateLeaderboard = () => {
   //let highestCurrentScore = Math.max(...allCurrentScores);
   let highestCurrentScore = allScoresDescending[0];
   
-  // Measure widest score span
+  // Measure widest score span (padding)
   let scoreSpanMaxWidth = 0;
   el_leaderboard.querySelectorAll('.player-bar').forEach((playerBar) => {
-    let scoreSpanWidth = playerBar.querySelector('.score-meter .current-score').offsetWidth;
-    scoreSpanMaxWidth = scoreSpanWidth > scoreSpanMaxWidth ? scoreSpanWidth : scoreSpanMaxWidth;
+    // let scoreMeter = playerBar.querySelector('.score-meter');
+    let style = window.getComputedStyle(playerBar.querySelector('.score-meter'));
+    let scoreMeterPaddingRight = parseFloat(style.paddingRight);
+    scoreSpanMaxWidth = scoreMeterPaddingRight > scoreSpanMaxWidth ? scoreMeterPaddingRight : scoreSpanMaxWidth;
   });
 
   // Update all score bar meters relative to the highest score
   el_leaderboard.querySelectorAll('.player-bar').forEach((playerBar) => {
     let bar = playerBar.querySelector('.score-meter .bar');
-    let scoreEl = playerBar.querySelector('.score-meter .current-score');
     let score = bar.getAttribute('data-current-score');
-    if(!scoreEl.classList.contains('score-animating')) { // Exclude animating scores as element width is changing
-      playerBar.querySelector('.score-meter').style.paddingRight = `${scoreSpanMaxWidth + 10}px`;
-    }
+    playerBar.querySelector('.score-meter').style.paddingRight = `${scoreSpanMaxWidth}px`;
     bar.style.width = score <= 0 ? 0 : `${(score/highestCurrentScore)*100}%`; // 0 width if minus score, else % of highest score
   });
 
