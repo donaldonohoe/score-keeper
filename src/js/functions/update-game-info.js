@@ -2,26 +2,29 @@
 // Update game history
 const gameHistoryAdd = (item) => {
 
-  // Function to create and append date marker
-  const createDateMarker = (item) => {
-    let el_dateMarker = document.createElement('span');
-    el_dateMarker.classList.add('date-marker');
-    el_dateMarker.innerHTML = formatTimestampDateFull(item.timestamp);
-    el_gameInfoHistory.append(el_dateMarker);
+  // Function to create and append date block
+  const createDateBlock = (item) => {
+    let el_dateBlock = document.createElement('div');
+    el_dateBlock.classList.add('date-block');
+    el_dateBlock.innerHTML = `
+      <span class="date-marker">${formatTimestampDateFull(item.timestamp)}</span>
+      <div class="history-items"></div>
+    `;
+    el_gameInfoHistory.append(el_dateBlock);
   }
 
-  // Add date marker if change of date occurs
+  // Add date block if change of date occurs
   let el_historyItems = el_gameInfoHistory.querySelectorAll('.history-item');
   if(el_historyItems.length) {
     let lastItemTimestamp = el_historyItems[el_historyItems.length - 1].getAttribute('data-timestamp');
     let lastItemDate = formatTimestampDate(lastItemTimestamp);
     let currentItemDate = formatTimestampDate(item.timestamp);
     if(currentItemDate !== lastItemDate) {
-      createDateMarker(item);
+      createDateBlock(item);
     }
   }
   else {
-    createDateMarker(item);
+    createDateBlock(item);
   }
 
   // Create and add history item
@@ -32,7 +35,9 @@ const gameHistoryAdd = (item) => {
     <span class="time">${formatTimestampHMS(item.timestamp)}</span>
     <span class="action">${item.action}</span>
   `;
-  el_gameInfoHistory.append(el_historyItem);
+  let dateBlocks = el_gameInfoHistory.querySelectorAll('.date-block');
+  // Append to last date block
+  dateBlocks[dateBlocks.length - 1].querySelector('.history-items').append(el_historyItem);
 
 }
 

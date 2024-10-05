@@ -48,3 +48,4 @@ const el_keyboardInputTypeButton = document.getElementById('keyboard-input-type-
 const el_gameInfoDrawer = document.getElementById('game-info-drawer');
 const el_gameInfoStats = document.getElementById('game-info-stats');
 const el_gameInfoHistory = document.getElementById('game-info-history');
+const el_gameInfoHistoryOrderButton = document.getElementById('game-history-order-button');

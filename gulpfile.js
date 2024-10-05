@@ -96,7 +96,8 @@ const jsCompile = [
           'main.js',
           'add-player-drawer.js',
           'player-drawer.js',
-          'settings-drawer.js'
+          'settings-drawer.js',
+          'game-info-drawer.js'
         ]
       }
     ]
