@@ -122,6 +122,10 @@ const updateGameStats = () => {
       </span>
     `;
   }
+  else {
+    // Reset game stats HTML
+    el_gameInfoStats.innerHTML = `<p>Nobody has played yet...</p>`;
+  }
 
 }
 

@@ -24,7 +24,7 @@ const restartGame = () => {
   saveGameJSON();
 
   // Reset game info (drawer)
-  el_gameInfoStats.innerHTML = '';
+  updateGameStats();
   el_gameInfoHistory.innerHTML = '';
   gameHistoryAdd(historyItem); // Append history item to show restart
 
@@ -54,7 +54,7 @@ const restartGameNew = () => {
   saveGameJSON();
 
   // Reset game info (drawer)
-  el_gameInfoStats.innerHTML = '';
+  updateGameStats();
   el_gameInfoHistory.innerHTML = '';
 
   // Reset Leaderboard
