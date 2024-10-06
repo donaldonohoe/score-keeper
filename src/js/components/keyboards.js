@@ -13,6 +13,12 @@ els_onScreenKeyboards.forEach((keyboard) => {
         if(keyValue == 'delete') {
           input.value = input.value.slice(0, -1);
         }
+        // Minus character
+        else if(keyValue == '-') {
+          if(input.value.length == 0) {
+            input.value += keyValue;
+          }
+        }
         // Append character
         else {
           input.value += keyValue;
