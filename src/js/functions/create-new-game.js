@@ -28,7 +28,9 @@ const createNewGame = (gameInStorage) => {
       'players_listed_by': 'score',
       'player_name_suggestions': true,
       'allow_decimal_scores': false,
-      'allow_negative_scores': false
+      'allow_negative_scores': false,
+      'keyboard_input_type': 'on-screen',
+      'history-order': 'chronological'
     };
   }
   // Save game

@@ -15,6 +15,15 @@ const setKeyboardInputTypeButton = () => {
   el_keyboardInputTypeButton.setAttribute('data-selected', selectedIndex);
 }
 
+// Set history order
+const setHistoryOrder = () => {
+  if(gameJSON.game_settings.history_order == 'reverse-chronological') {
+    el_gameInfoHistory.classList.add('reverse-chronological');
+  } else {
+    el_gameInfoHistory.classList.remove('reverse-chronological');
+  }
+}
+
 // Update player order type
 const updatePlayerOrderType = () => {
   let selectedIndex = el_playerOrderTypeButton.getAttribute('data-selected');
