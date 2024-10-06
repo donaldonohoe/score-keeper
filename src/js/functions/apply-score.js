@@ -24,6 +24,7 @@ const animatePlayerBarScore = (playerBar, newScore) => {
   // Ref: https://stackoverflow.com/questions/16994662/count-animation-from-number-a-to-b  
   let scoreEl = playerBar.querySelector('.score-meter .current-score');
   let oldScore = parseInt(scoreEl.innerHTML);
+  // let oldScore = parseFloat(scoreEl.innerHTML);
   let range = newScore - oldScore;
   let duration = playerScoreAnimateTime;
   let minTimer = 50; // no timer shorter than 50ms (not really visible any way)
@@ -35,14 +36,16 @@ const animatePlayerBarScore = (playerBar, newScore) => {
   // Animate function
   let run = () => {
     let now = new Date().getTime();
+    if (now >= endTime) { // Check if the current time has passed the end time
+      scoreEl.innerHTML = newScore; // Set to final value
+      clearInterval(timer);
+      scoreEl.classList.remove('score-animating');
+      return;
+    }
     let remaining = Math.max((endTime - now) / duration, 0);
     let value = Math.round(newScore - (remaining * range));
     scoreEl.innerHTML = value;
-    if (value == newScore) {
-      clearInterval(timer);
-      scoreEl.classList.remove('score-animating');
-    }
-  }
+  };
   timer = setInterval(run, stepTime);
   scoreEl.classList.add('score-animating'); 
   run();
