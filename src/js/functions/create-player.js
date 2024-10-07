@@ -84,6 +84,12 @@ const addPlayerInputCheck = (value) => {
       alert('A player with this name already exists');
     }
     else {
+      // Set display on layers (after first player only)
+      if(gameJSON.game_session.players.length == 0) {
+        el_intro.classList.remove('active');
+        el_leaderboard.classList.add('active');
+        el_gameNav.classList.add('active');
+      }
       createPlayer(value); 
     }
   }

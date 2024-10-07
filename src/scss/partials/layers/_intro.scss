@@ -1,0 +1,66 @@
+#intro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  opacity: 0;
+  pointer-events: none;
+  #intro-add-player-button {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: $app_accent_orange;
+    padding: 10px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(10px);
+    svg { // Nav icon
+      position: relative;
+      display: block;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto;
+      margin-bottom: 5px;
+      stroke: $app_accent_orange;
+    }
+    &:active {
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+  }
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+    #intro-add-player-button {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 2s $ease_out_quint 0.5s;
+      svg {
+        animation: introButtonGlow 5s linear 1.5s infinite;
+      }
+    }
+  }
+} // #intro
+
+
+
+
+// Non-touch devices
+body[data-touch="false"] {
+
+  #intro {
+    #intro-add-player-button {
+      cursor: pointer;
+      // transition: all 0.2s $ease;
+      &:hover {
+        color: mix(white, $app_accent_orange, 20%);
+        svg { // Nav icon
+          stroke: mix(white, $app_accent_orange, 20%);
+        }
+      }
+    }
+  }
+
+} // non-touch

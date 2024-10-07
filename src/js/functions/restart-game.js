@@ -43,6 +43,11 @@ const restartGame = () => {
 // Start new game with no players
 const restartGameNew = () => {
 
+  // Reset to intro
+  el_leaderboard.classList.remove('active');
+  el_gameNav.classList.remove('active');
+  el_intro.classList.add('active');
+
   // Update Game JSON
   // Reset game timestamp
   gameJSON.game_created_timestamp = Date(); // e.g. 'Thu Jun 13 2024 23:34:49 GMT+0100 (Irish Standard Time)'

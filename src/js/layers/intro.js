@@ -10,7 +10,15 @@ else {
   console.log('No previous game. Setting up new game...');
   createNewGame(false);
   console.log(gameJSON);
+  el_intro.classList.add('active');
 }
+
+
+el_introAddPlayerButton.addEventListener('click', (e) => {
+  el_addPlayerButton.click();
+});
+
+
 
 
 

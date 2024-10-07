@@ -6,6 +6,8 @@ const els_onScreenKeyboards = document.querySelectorAll('.on-screen-keyboard');
 // Main
 const el_main = document.querySelector('main');
 const el_background = document.getElementById('background');
+const el_intro = document.getElementById('intro');
+const el_introAddPlayerButton = document.getElementById('intro-add-player-button');
 
 // Leaderboard
 const el_leaderboard = document.getElementById('leaderboard');
