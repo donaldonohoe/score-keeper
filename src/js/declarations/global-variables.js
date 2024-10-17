@@ -1,7 +1,7 @@
 let gameJSON;
 
 // Measures
-let playerBarHeight = 100; // px (default)
+let playerBarHeight = window.innerWidth < 768 ? 100 : 130; // px
 const drawerPullThreshold = 100; // Amount of px a drawer needs to be pulled to close upon release
 const backgroundVoltMaxDelay = 10000; // ms
 

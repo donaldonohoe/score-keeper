@@ -99,3 +99,28 @@ body[data-touch="false"] {
   }
 
 } // non-touch
+
+
+
+@include mquery(m) {
+
+  nav {
+    justify-content: center;
+    button {
+      font-size: 16px;
+      svg { // Nav icon
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+      }
+    }
+    &:before { // Background gradient
+      height: 150px;
+    }
+  }
+
+  #game-nav {
+    grid-template-columns: repeat(auto-fit, minmax(50px, 150px));
+  }
+
+} // end media-query medium

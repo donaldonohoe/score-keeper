@@ -1,9 +1,4 @@
 
-// Fit on resize
-window.addEventListener("resize", () => el_main.style.height = `${window.innerHeight}px`);
-
-
-
 // Click main nav buttons
 els_navButtons.forEach((button) => {
   button.addEventListener('click', (e) => {
@@ -22,7 +17,6 @@ els_navButtons.forEach((button) => {
 
 
 // Background effects
-
 const fireVolt = () => {
   const volt = el_background.querySelector('.grid .volt');
   // Random direction
@@ -49,7 +43,6 @@ const fireVolt = () => {
   // Schedule next volt
   scheduleRandomVolt();
 }
-
 const scheduleRandomVolt = () => {
   // Check settings for background effect...
   let randomDelay = Math.floor(Math.random() * backgroundVoltMaxDelay);
@@ -58,3 +51,19 @@ const scheduleRandomVolt = () => {
   }, randomDelay);
 }
 scheduleRandomVolt();
+
+
+
+
+// On resize
+window.addEventListener("resize", () => {
+
+  // Fit window height
+  el_main.style.height = `${window.innerHeight}px`;
+
+  // Update player bar heights
+  playerBarHeight = window.innerWidth < 768 ? 100 : 130; // px
+  updateLeaderboard();
+
+});
+

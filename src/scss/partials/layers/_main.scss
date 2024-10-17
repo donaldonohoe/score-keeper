@@ -95,12 +95,16 @@ main {
 #leaderboard {
   position: relative;
   width: 100%;
+  max-width: 600px;
   height: 100%;
   padding: 15px;
   overflow: auto; // allow scroll if players exceed height
   padding-bottom: $player_bar_height;
   opacity: 0;
   pointer-events: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   #player-bars {
     position: relative;
     width: 100%;
@@ -205,3 +209,48 @@ body[data-touch="false"] {
   } // .player-bar
 
 } // non-touch
+
+
+
+
+
+@include mquery(m) {
+
+  #background {
+    // Grid
+    .grid {
+      background-size: 5vw 5vw;
+    }
+  }
+
+  #leaderboard {
+    max-width: 800px;
+    padding-bottom: $player_bar_height_m;
+  }
+
+  .player-bar {
+    height: $player_bar_height_m;
+    .inner {
+      height: calc(100% - 15px - 15px);
+      padding: 15px;
+      border-radius: 15px;
+      margin: 15px 0;
+      .name {
+        font-size: 28px;
+      }
+      .play-count {
+        font-size: 20px;
+      }
+      .score-meter {
+        .bar {
+          height: 15px;
+          border-radius: 10px;
+          .current-score {
+            font-size: 28px;
+          }
+        }
+      }
+    }
+  }
+
+} // end media-query medium
