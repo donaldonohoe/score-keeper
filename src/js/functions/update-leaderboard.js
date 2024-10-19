@@ -1,4 +1,17 @@
 
+// Set alignment based on available space
+const setLeaderboardAlignment = () => {
+  let playerBarsHeight = el_playerBars.querySelectorAll('.player-bar').length * playerBarHeight;
+  let leaderboardStyle = window.getComputedStyle(el_leaderboard);
+  let leaderboardAvailableSpace = el_leaderboard.offsetHeight - parseFloat(leaderboardStyle.paddingTop) - parseFloat(leaderboardStyle.paddingBottom);
+  if(playerBarsHeight > leaderboardAvailableSpace) {
+    el_leaderboard.classList.add('align-top');
+  } else {
+    el_leaderboard.classList.remove('align-top');
+  }
+}
+
+
 const updateLeaderboard = () => {
 
   // Sort all current scores and get highest
@@ -61,4 +74,7 @@ const updateLeaderboard = () => {
     }
   }
 
+  // Set vertical alignment
+  setLeaderboardAlignment();
+  
 } // updateLeaderboard()

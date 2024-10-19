@@ -29,6 +29,7 @@ const removePlayerBar = (player) => {
     playerBar.remove();
     let numberOfPlayerBars = el_playerBars.querySelectorAll('.player-bar').length;
     el_playerBars.style.height = `${numberOfPlayerBars * playerBarHeight}px`;
+    setLeaderboardAlignment();
   }, playerRemoveTime);
 }
 
@@ -41,9 +42,9 @@ const removePlayer = (player) => {
   // Update Leaderboard
   setTimeout(() => {
     removePlayerBar(player);
-    setTimeout(() => {
+    //setTimeout(() => {
       updateLeaderboard();
       updateGameStats();
-    }, playerRemoveTime);
+    //}, playerRemoveTime);
   }, drawerSlideTime);
 }

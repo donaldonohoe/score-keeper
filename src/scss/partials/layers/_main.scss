@@ -94,6 +94,8 @@ main {
 
 #leaderboard {
   position: relative;
+  display: flex;
+  align-items: center;
   width: 100%;
   max-width: 600px;
   height: 100%;
@@ -108,10 +110,14 @@ main {
   #player-bars {
     position: relative;
     width: 100%;
+    transition: all 0.5s $ease 0.2s;
   }
   &.active {
     opacity: 1;
     pointer-events: auto;
+  }
+  &.align-top {
+    align-items: start;
   }
 }
 
@@ -137,7 +143,10 @@ main {
     align-items: center;
     border-radius: 10px;
     background-color: rgba($app_black_80, 0.4);
-    transition: background-color 0.2s $ease;
+    opacity: 1;
+    transform: translateY(0);
+    // transition: background-color 0.2s $ease;
+    transition: all 0.5s $ease, background-color 0.2s $ease;
     .name {
       grid-column: 1 / span 1;
       font-size: 24px;
@@ -179,6 +188,12 @@ main {
           }
         }
       }
+    }
+  }
+  &.new {
+    .inner {
+      opacity: 0;
+      transform: translateY(20px);
     }
   }
   &.remove {

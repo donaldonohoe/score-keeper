@@ -48,6 +48,8 @@ const createPlayerBar = (player) => {
   let numberOfPlayerBars = el_playerBars.querySelectorAll('.player-bar').length;
   el_playerBar.style.transform = `translateY(${(numberOfPlayerBars - 1) * playerBarHeight}px)`;
   el_playerBars.style.height = `${numberOfPlayerBars * playerBarHeight}px`;
+  // Check leaderboard alignment
+  setLeaderboardAlignment();
   // Apply player bar event listener
   el_playerBar.addEventListener('click', openPlayerDrawer, true);
 }
