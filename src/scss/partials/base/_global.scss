@@ -1,6 +1,6 @@
 
 body {
-	font-family: $font_family_primary;
+	font-family: $font_family_secondary;
 	font-weight: 400;
 	background-color: $app_black;
 	color: $white;
@@ -8,7 +8,7 @@ body {
 
 // Typography
 h1, h2, h3, h4, h5, h6 {
-	//font-family: 
+	font-family: $font_family_primary;
 	font-weight: 400;
 	//-webkit-font-smoothing: antialiased;
 }
@@ -60,7 +60,7 @@ ol {
 	padding-inline-start: 1.25em; // Single digit space at scalable font-size
 }
 button {
-	font-family: $font_family_primary;
+	font-family: $font_family_secondary;
 	outline: 0;
 	border: 0;
 	background: transparent;

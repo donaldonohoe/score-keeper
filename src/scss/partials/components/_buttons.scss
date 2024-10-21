@@ -2,6 +2,7 @@
 // Standard action button
 .action-button {
   font-size: 16px;
+  font-weight: 500;
   text-transform: uppercase;
   color: $app_black;
   background-color: $white;
@@ -39,6 +40,7 @@
   span {
     position: relative;
     font-size: 16px;
+    font-weight: 500;
     text-transform: uppercase;
     color: $white;
     padding: 10px;

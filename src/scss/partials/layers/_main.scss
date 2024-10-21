@@ -135,7 +135,7 @@ main {
     width: 100%;
     height: calc(100% - 10px - 10px);
     margin: 10px 0;
-    padding: 10px;
+    padding: 15px 10px 12px 10px;
     grid-template-columns: auto auto;
     grid-template-rows: min-content auto;
     grid-column-gap: 30px;
@@ -149,7 +149,10 @@ main {
     transition: all 0.5s $ease, background-color 0.2s $ease;
     .name {
       grid-column: 1 / span 1;
+      font-family: $font_family_primary;
       font-size: 24px;
+      line-height: 1;
+      align-self: end;
       //text-transform: uppercase;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -157,9 +160,10 @@ main {
     }
     .play-count {
       grid-column: 2 / span 1;
-      font-size: 18px;
+      font-size: 16px;
       color: $app_black_30;
       justify-self: end;
+      align-self: start;
     }
     .score-meter {
       grid-column: 1 / span 2;
@@ -177,6 +181,7 @@ main {
         //transition: width 0.5s $ease;
         transition: width 0.7s $ease;
         .current-score {
+          font-family: $font_family_primary;
           font-size: 24px;
           transform: translateX(calc(100% + 10px));
         }

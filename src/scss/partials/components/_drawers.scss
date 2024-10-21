@@ -27,7 +27,7 @@
       stroke: $app_black_30;
     }
     h2 {
-      font-size: 18px;
+      font-size: 20px;
       color: $app_black_30;
       text-transform: uppercase;
     }
@@ -96,8 +96,8 @@
         align-items: center;
         border-bottom: 2px solid $white;
         input {
-          font-family: $font_family_primary;
-          font-size: 36px;
+          font-family: $font_family_secondary;
+          font-size: 28px;
           text-transform: uppercase;
           color: $white;
           width: 100%;
@@ -344,7 +344,7 @@
         grid-column: span 1;
         justify-self: start;
         align-self: center;
-        font-size: 18px;
+        font-size: 22px;
         text-transform: uppercase;
         margin-bottom: 3px;
       }
@@ -354,7 +354,7 @@
       }
       .description {
         grid-column: span 2;
-        font-size: 12px;
+        font-size: 14px;
         color: $app_black_30;
       }
       &:last-of-type {
