@@ -94,27 +94,27 @@ const updateGameStats = () => {
       <span class="stats-item">
         <span class="label">Leader:</span>
         <span class="value">${leadingPlayer.name}</span>
-        <span class="value-context">(${leadingPlayer.current_score})</span>
+        <span class="value-context">${leadingPlayer.current_score}</span>
       </span>
       <span class="stats-item">
         <span class="label">Highest Score:</span>
         <span class="value">${gameHighestScore}</span>
-        <span class="value-context">(${gameHighestScorePlayer.name})</span>
+        <span class="value-context">${gameHighestScorePlayer.name}</span>
       </span>
       <span class="stats-item">
         <span class="label">Lowest Score:</span>
         <span class="value">${gameLowestScore}</span>
-        <span class="value-context">(${gameLowestScorePlayer.name})</span>
+        <span class="value-context">${gameLowestScorePlayer.name}</span>
       </span>
       <span class="stats-item">
         <span class="label">Highest Average Score:</span>
         <span class="value">${gameHighestAverageScore}</span>
-        <span class="value-context">(${gameHighestAverageScorePlayer.name})</span>
+        <span class="value-context">${gameHighestAverageScorePlayer.name}</span>
       </span>
       <span class="stats-item">
         <span class="label">Lowest Average Score:</span>
         <span class="value">${gameLowestAverageScore}</span>
-        <span class="value-context">(${gameLowestAverageScorePlayer.name})</span>
+        <span class="value-context">${gameLowestAverageScorePlayer.name}</span>
       </span>
       <span class="stats-item">
         <span class="label">Overall Average Score:</span>
@@ -143,7 +143,8 @@ const updatePlayerStats = (player) => {
       </span>
       <span class="stats-item">
         <span class="label">Current position:</span>
-        <span class="value">${getOrdinal(player.current_ranking)} (of ${gameJSON.game_session.players.length})</span>
+        <span class="value">${getOrdinal(player.current_ranking)}</span>
+        <span class="value-context">of ${gameJSON.game_session.players.length}</span>
       </span>
       <span class="stats-item">
         <span class="label">Number of plays:</span>

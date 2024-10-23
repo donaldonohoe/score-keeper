@@ -151,29 +151,35 @@
       // Stats
       .stats {
         .stats-item {
-          display: grid;
-          grid-template-columns: minmax(200px, max-content) auto;
-          grid-gap: 5px 20px;
-          margin-bottom: 15px;
+          display: block;
+          position: relative;
+          margin-bottom: 30px;
           .label {
-            font-size: 18px;
+            display: block;
+            font-size: 16px;
             text-transform: uppercase;
-            justify-self: start;
+            margin-bottom: 5px;
           }
           .value {
-            font-size: 18px;
-            justify-self: end;
+            display: inline-block;
+            font-family: $font_family_primary;
+            font-size: 60px;
+            font-size: 12vw;
+            line-height: 1;
+            color: $app_black_40;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            max-width: 100%;
+            max-width: 80%;
+            margin-left: 15px;
+            //text-shadow: -7px 7px 0px rgba($app_accent_orange,0.3);
           }
           .value-context {
-            grid-column: 2;
-            grid-row: 2;
-            font-size: 14px;
+            position: absolute;
+            bottom: 7px;
+            margin-left: 8px;
+            font-size: 18px;
             color: $app_black_30;
-            justify-self: end;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -438,6 +444,18 @@ body[data-touch="false"] {
 
   .drawer {
     background-color: transparent;
+    .inner {
+      .drawer-section {
+        // Stats
+        .stats {
+          .stats-item {
+            .value {
+              font-size: 70px;
+            }
+          }
+        }
+      }
+    }
     .drawer-nav {
       grid-template-columns: repeat(auto-fit, minmax(50px, 150px));
       &:before { // Background gradient
