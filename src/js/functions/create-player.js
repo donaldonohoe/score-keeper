@@ -85,6 +85,10 @@ const addPlayerInputCheck = (value) => {
     if (gameJSON.game_session.players.some(player => player.name == value)) {
       alert('A player with this name already exists');
     }
+    // Disallow backslashes (acts as escape character and breaks functionality)
+    else if (value.includes('\\')) {
+      alert('Cannot use the "\\" character in a name');
+    }
     else {
       // Set display on layers (after first player only)
       if(gameJSON.game_session.players.length == 0) {
