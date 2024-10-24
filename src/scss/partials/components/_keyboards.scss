@@ -39,12 +39,19 @@
         margin-bottom: 10px;
         .key {
           height: 6vh;
-          max-height: 50px;
+          // max-height: 50px;
+          max-height: 42px;
           font-size: 22px;
           // Backspace button
           &[data-value="delete"] {
             width: 150%;
             padding: 10px 5px;
+            background-color: $app_black_80;
+          }
+          // Space button
+          &[data-value=" "] {
+            font-size: 16px;
+            text-transform: lowercase;
           }
         }
         &:nth-of-type(1) {
@@ -55,6 +62,9 @@
         }
         &:nth-of-type(3) {
           grid-template-columns: repeat(8, minmax(20px, 9%));
+        }
+        &:nth-of-type(4) {
+          grid-template-columns: repeat(2, minmax(20px, 9%)) 30% repeat(2, minmax(20px, 9%));
         }
       }
     }

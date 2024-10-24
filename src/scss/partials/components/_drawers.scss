@@ -140,6 +140,8 @@
           &+.on-screen-keyboard {
             display: block;
             margin-top: 20px;
+            margin-left: -5px;
+            margin-right: -5px;
           }
         }
         &[data-input-type="native"] {
@@ -229,12 +231,14 @@
 
 // Add Player drawer
 #add-player-drawer {
-  height: 60%;
+  height: 65%;
   .inner {
     //padding-top: 60px;
     //align-self: end;
     .drawer-section {
+      align-content: end;
       margin-bottom: 0;
+      padding-bottom: 30px;
     }
   }
 } // #add-player-drawer
@@ -425,15 +429,15 @@ body[data-touch="false"] {
   } // .drawer
 
   // Player drawer
-#player-drawer {
-  .drawer-footer {
-    #remove-player-button {
-      &:hover {
-        text-underline-offset: 8px;
+  #player-drawer {
+    .drawer-footer {
+      #remove-player-button {
+        &:hover {
+          text-underline-offset: 8px;
+        }
       }
     }
-  }
-} // #add-player-drawer
+  } // #add-player-drawer
 
 } // non-touch
 
@@ -467,6 +471,11 @@ body[data-touch="false"] {
   // Add Player drawer
   #add-player-drawer {
     height: 95%;
+    .inner {
+      .drawer-section {
+        align-content: start;
+      }
+    }
   }
 
   #drawer-scrim {

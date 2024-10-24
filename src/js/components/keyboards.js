@@ -14,7 +14,7 @@ els_onScreenKeyboards.forEach((keyboard) => {
           input.value = input.value.slice(0, -1);
         }
         // Minus character
-        else if(keyValue == '-') {
+        else if(keyValue == '-' && keyboard.classList.contains('numeric')) {
           if(input.value.length == 0) {
             input.value += keyValue;
           }
