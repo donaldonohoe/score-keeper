@@ -236,7 +236,6 @@
     //padding-top: 60px;
     //align-self: end;
     .drawer-section {
-      align-content: end;
       margin-bottom: 0;
       padding-bottom: 30px;
     }
@@ -471,11 +470,6 @@ body[data-touch="false"] {
   // Add Player drawer
   #add-player-drawer {
     height: 95%;
-    .inner {
-      .drawer-section {
-        align-content: start;
-      }
-    }
   }
 
   #drawer-scrim {
