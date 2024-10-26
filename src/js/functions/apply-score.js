@@ -26,7 +26,7 @@ const animatePlayerBarScore = (playerBar, newScore) => {
   let oldScore = parseInt(scoreEl.innerHTML);
   // let oldScore = parseFloat(scoreEl.innerHTML);
   let range = newScore - oldScore;
-  let duration = playerScoreAnimateTime;
+  let duration = range * 50 < playerScoreAnimateTime ? range * 50 : playerScoreAnimateTime;
   let minTimer = 50; // no timer shorter than 50ms (not really visible any way)
   let stepTime = Math.abs(Math.floor(duration / range)); // calc step time to show all intermediate values
   stepTime = Math.max(stepTime, minTimer); // never go below minTimer
@@ -83,5 +83,5 @@ const applyScore = (score) => {
     // Update Leaderboard
     updateLeaderboard();
     updateGameStats();
-  }, drawerSlideTime);
+  }, drawerSlideTime + 100);
 }
