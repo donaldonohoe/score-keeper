@@ -74,6 +74,11 @@ const loadSampleGame = () => {
     { name: 'Eddie', scores: [5, 27, 44] }
   ];
   setTimeout(() => { // wait for previous game to be fully reset
+		// Set display on layers
+    el_intro.classList.remove('active');
+    el_leaderboard.classList.add('active');
+    el_gameNav.classList.add('active');
+		// Create sample players
     samplePlayers.forEach((p) => {
 			let playerName = p.name.toUpperCase();
       createPlayer(playerName); 
