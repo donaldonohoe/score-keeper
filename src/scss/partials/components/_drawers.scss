@@ -210,9 +210,6 @@
       background: linear-gradient(to top, rgba($app_black_90, 0.9) 50%, transparent);
     }
   }
-  .drawer-footer {
-
-  }
   &.from-bottom {
     border-top-left-radius: $drawer_border_radius;
     border-top-right-radius: $drawer_border_radius;
@@ -238,30 +235,6 @@
     .drawer-section {
       margin-bottom: 0;
       padding-bottom: 30px;
-    }
-  }
-} // #add-player-drawer
-
-
-// Player drawer
-#player-drawer {
-  .drawer-nav {
-    button {
-      &#player-add-score-button {
-        &:before {
-          background-image: url($icon_add_light);
-        }
-      }
-      &#player-stats-button {
-        &:before {
-          background-image: url($icon_stats_light);
-        }
-      }
-      &#player-remove-button {
-        &:before {
-          background-image: url($icon_backspace_light);
-        }
-      }
     }
   }
 } // #add-player-drawer
@@ -426,17 +399,6 @@ body[data-touch="false"] {
       }
     }
   } // .drawer
-
-  // Player drawer
-  #player-drawer {
-    .drawer-footer {
-      #remove-player-button {
-        &:hover {
-          text-underline-offset: 8px;
-        }
-      }
-    }
-  } // #add-player-drawer
 
 } // non-touch
 
