@@ -207,7 +207,7 @@
   .drawer-nav {
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
     &:before { // Background gradient
-      background: linear-gradient(to top, rgba($app_black_90, 0.9) 50%, transparent);
+      background: linear-gradient(to top, rgba($app_black_90, 1) 0%, rgba($app_black_90, 0.9) 50%, transparent);
     }
   }
   &.from-bottom {
@@ -411,6 +411,7 @@ body[data-touch="false"] {
     background-color: transparent;
     .inner {
       .drawer-section {
+        padding-bottom: 180px;
         // Stats
         .stats {
           .stats-item {
@@ -424,7 +425,8 @@ body[data-touch="false"] {
     .drawer-nav {
       grid-template-columns: repeat(auto-fit, minmax(50px, 150px));
       &:before { // Background gradient
-        background: linear-gradient(to top, rgba(#222, 0.9) 50%, transparent);
+        height: 200px;
+        background: linear-gradient(to top, rgba(#222, 1) 0%, rgba(#222, 0.9) 50%, transparent);
       }
     }
   }
