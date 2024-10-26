@@ -80,7 +80,7 @@ const createPlayer = (playerName) => {
 const addPlayerInputCheck = (value) => {
   value = value.toUpperCase(); // Convert to uppercase at point of entry
   // Check if input is at least 1 character
-  if(value.length > 1) {
+  if(value.length >= 1) {
     // Check if player already exists matching input
     if (gameJSON.game_session.players.some(player => player.name == value)) {
       alert('A player with this name already exists');
