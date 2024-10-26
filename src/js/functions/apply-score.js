@@ -39,7 +39,7 @@ const animatePlayerBarScore = (playerBar, newScore) => {
     if (now >= endTime) { // Check if the current time has passed the end time
       scoreEl.innerHTML = newScore; // Set to final value
       clearInterval(timer);
-      scoreEl.classList.remove('score-animating');
+      // playerBar.classList.remove('score-animating');
       return;
     }
     let remaining = Math.max((endTime - now) / duration, 0);
@@ -47,8 +47,11 @@ const animatePlayerBarScore = (playerBar, newScore) => {
     scoreEl.innerHTML = value;
   };
   timer = setInterval(run, stepTime);
-  scoreEl.classList.add('score-animating'); 
+  playerBar.classList.add('score-animating'); 
   run();
+  setTimeout(() => {
+    playerBar.classList.remove('score-animating');
+  }, playerScoreAnimateTime);
 }
 
 
