@@ -208,10 +208,10 @@ main {
       transition: all 0.5s $ease;
     }
   }
-  &:active {
-    background-color: $app_black_40;
-    transition: none;
-  }
+  // &:active {
+  //   background-color: $app_black_40;
+  //   transition: none;
+  // }
   &.score-animating {
     .inner {
       background-color: rgba($app_black_80, 0.6);
