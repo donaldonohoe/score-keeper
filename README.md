@@ -2,6 +2,14 @@
 
 Score Keeper is a web app with a visually dynamic leaderboard for keeping track of player scores and performance.
 
+<p float="left">
+  <img src="/src/img/app-screen-intro.png" width="200" />
+  <img src="/src/img/app-screen-leaderboard.png" width="200" />
+  <img src="/src/img/app-screen-add-player.png" width="200" />
+  <img src="/src/img/app-screen-add-score.png" width="200" />
+  <img src="/src/img/app-screen-game-stats.png" width="200" />
+</p>
+
 ## Main features
 
 - Intuitive UI with minimal components and mobile-friendly gestures.
