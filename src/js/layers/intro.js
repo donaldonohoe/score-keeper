@@ -3,13 +3,13 @@
 if(localStorage.getItem("game")) {
   gameJSON = JSON.parse(localStorage.getItem("game"));
   loadGameFromStorage(gameJSON);
-  console.log(gameJSON);
+  //console.log(gameJSON);
 }
 // Else set up new game
 else {
-  console.log('No previous game. Setting up new game...');
+  //console.log('No previous game. Setting up new game...');
   createNewGame(false);
-  console.log(gameJSON);
+  //console.log(gameJSON);
   el_intro.classList.add('active');
 }
 
