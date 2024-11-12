@@ -22,7 +22,7 @@ function pipeHTML() {
       minifyJS: false,
       removeEmptyAttributes: false
     }))
-    .pipe(rename({ extname: '.min.html' }))
+    //.pipe(rename({ extname: '.min.html' }))
     .pipe(gulp.dest('dist/'))
     //.pipe(browserSync.stream())
 }
@@ -51,7 +51,7 @@ function scss(cb) {
       outputStyle: 'compressed' // compressed/expanded
     }))
     .on('error', sass.logError)
-    .pipe(rename({ extname: '.min.css' }))
+    //.pipe(rename({ extname: '.min.css' }))
     .pipe(gulp.dest('dist/css/')) // pipe to dist/
     //.pipe(browserSync.stream())
 }
@@ -126,7 +126,7 @@ function scripts(cb) {
     .pipe(concat(page.compileTo)) // Concat to file in same obj
     .pipe(gulp.dest('test/js/'))
     .pipe(uglify())
-    .pipe(rename({ extname: '.min.js' }))
+    //.pipe(rename({ extname: '.min.js' }))
     .pipe(gulp.dest('dist/js/'))
     //.pipe(browserSync.stream())
   });
