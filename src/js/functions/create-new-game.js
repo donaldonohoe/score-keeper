@@ -23,13 +23,14 @@ const createNewGame = (gameInStorage) => {
   // Create historical players list
   gameJSON.game_historical_players = [];
   // Create game settings
+  let keyboardInputType = isTouchDevice == true ? 'on-screen' : 'native';
   if(!gameInStorage) {
     gameJSON.game_settings = {
       'players_listed_by': 'score',
       'player_name_suggestions': true,
       'allow_decimal_scores': false,
       'allow_negative_scores': false,
-      'keyboard_input_type': 'on-screen',
+      'keyboard_input_type': keyboardInputType,
       'history-order': 'chronological'
     };
   }

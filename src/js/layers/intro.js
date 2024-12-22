@@ -1,4 +1,11 @@
 
+// Check if touch device
+const isTouchDevice = () => {
+  return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+}
+document.body.setAttribute('data-touch', isTouchDevice());
+
+
 // Check local storage for Game
 if(localStorage.getItem("game")) {
   gameJSON = JSON.parse(localStorage.getItem("game"));
@@ -17,13 +24,3 @@ else {
 el_introAddPlayerButton.addEventListener('click', (e) => {
   el_addPlayerButton.click();
 });
-
-
-
-
-
-// Check if touch device
-const isTouchDevice = () => {
-  return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
-}
-document.body.setAttribute('data-touch', isTouchDevice());
